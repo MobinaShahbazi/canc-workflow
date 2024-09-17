@@ -1,0 +1,4 @@
+- open up the  cmd in the where the docker-compose.yml file is (sartography/spiff-arena github)
+- run these two comands:
+docker-compose pull
+docker-compose up

@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:spiffworkflow="http://spiffworkflow.org/bpmn/schema/1.0/core" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_96f6665" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.0.0-dev">
+  <bpmn:process id="Process_test_f0v3xpd" isExecutable="true">
+    <bpmn:sequenceFlow id="Flow_17db3yp" sourceRef="StartEvent_1" targetRef="Activity_0qpzdpu" />
+    <bpmn:endEvent id="EndEvent_1">
+      <bpmn:incoming>Flow_16p75ec</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_12pkbxb" sourceRef="Activity_0qpzdpu" targetRef="Activity_1k8s2sn" />
+    <bpmn:sequenceFlow id="Flow_1cy9s1i" sourceRef="Activity_18b3xbg" targetRef="Activity_0vszxia" />
+    <bpmn:businessRuleTask id="Activity_18b3xbg" name="risk">
+      <bpmn:extensionElements>
+        <spiffworkflow:calledDecisionId>decision_4xfrtgx</spiffworkflow:calledDecisionId>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_195vww7</bpmn:incoming>
+      <bpmn:outgoing>Flow_1cy9s1i</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:sequenceFlow id="Flow_0sisgnn" sourceRef="Activity_1k8s2sn" targetRef="Activity_1iie0zz" />
+    <bpmn:businessRuleTask id="Activity_1k8s2sn" name="personal_breast_examination">
+      <bpmn:extensionElements>
+        <spiffworkflow:calledDecisionId>decision_ke798m7</spiffworkflow:calledDecisionId>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_12pkbxb</bpmn:incoming>
+      <bpmn:outgoing>Flow_0sisgnn</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:sequenceFlow id="Flow_1rfqeqp" sourceRef="Activity_1iie0zz" targetRef="Activity_1hzj22o" />
+    <bpmn:businessRuleTask id="Activity_1iie0zz" name="clinical_breast_examination">
+      <bpmn:extensionElements>
+        <spiffworkflow:calledDecisionId>decision_a8xua3b</spiffworkflow:calledDecisionId>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0sisgnn</bpmn:incoming>
+      <bpmn:outgoing>Flow_1rfqeqp</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:sequenceFlow id="Flow_1n6qek2" sourceRef="Activity_1hzj22o" targetRef="Activity_06gy62z" />
+    <bpmn:businessRuleTask id="Activity_1hzj22o" name="mammography_history">
+      <bpmn:extensionElements>
+        <spiffworkflow:calledDecisionId>decision_59kg976</spiffworkflow:calledDecisionId>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1rfqeqp</bpmn:incoming>
+      <bpmn:outgoing>Flow_1n6qek2</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:sequenceFlow id="Flow_1he6jhc" sourceRef="Activity_06gy62z" targetRef="Activity_0y55je8" />
+    <bpmn:businessRuleTask id="Activity_06gy62z" name="ultrasound_history">
+      <bpmn:extensionElements>
+        <spiffworkflow:calledDecisionId>decision_a0vyx23</spiffworkflow:calledDecisionId>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1n6qek2</bpmn:incoming>
+      <bpmn:outgoing>Flow_1he6jhc</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:sequenceFlow id="Flow_00p0zwn" sourceRef="Activity_0y55je8" targetRef="Activity_0zkv4ai" />
+    <bpmn:businessRuleTask id="Activity_0y55je8" name="biopsy_history">
+      <bpmn:extensionElements>
+        <spiffworkflow:calledDecisionId>decision_y7q574n</spiffworkflow:calledDecisionId>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1he6jhc</bpmn:incoming>
+      <bpmn:outgoing>Flow_00p0zwn</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:sequenceFlow id="Flow_1fziqbg" sourceRef="Activity_0zkv4ai" targetRef="Activity_0nvhm9b" />
+    <bpmn:businessRuleTask id="Activity_0zkv4ai" name="radiotherapy_history">
+      <bpmn:extensionElements>
+        <spiffworkflow:calledDecisionId>decision_8h2p59e</spiffworkflow:calledDecisionId>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_00p0zwn</bpmn:incoming>
+      <bpmn:outgoing>Flow_1fziqbg</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:businessRuleTask id="Activity_0nvhm9b" name="personal_familial_cancer_history">
+      <bpmn:extensionElements>
+        <spiffworkflow:calledDecisionId>decision_j31gul4</spiffworkflow:calledDecisionId>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1fziqbg</bpmn:incoming>
+      <bpmn:outgoing>Flow_06jiy8g</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:businessRuleTask id="Activity_0vszxia" name="threshold_age">
+      <bpmn:extensionElements>
+        <spiffworkflow:calledDecisionId>decision_gzz36v6</spiffworkflow:calledDecisionId>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1cy9s1i</bpmn:incoming>
+      <bpmn:outgoing>Flow_1ubjl89</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:sequenceFlow id="Flow_06jiy8g" sourceRef="Activity_0nvhm9b" targetRef="Activity_01fucpm" />
+    <bpmn:sequenceFlow id="Flow_195vww7" sourceRef="Activity_01fucpm" targetRef="Activity_18b3xbg" />
+    <bpmn:scriptTask id="Activity_01fucpm" name="risk_init">
+      <bpmn:extensionElements>
+        <spiffworkflow:instructionsForEndUser />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_06jiy8g</bpmn:incoming>
+      <bpmn:outgoing>Flow_195vww7</bpmn:outgoing>
+      <bpmn:ioSpecification>
+        <bpmn:inputSet />
+        <bpmn:outputSet />
+      </bpmn:ioSpecification>
+      <bpmn:script>
+# history_a --------------------------------------------------
+filtered_list = [entry for entry in familial_breast_cancer_list if entry.get('degree') in [1, 2]]
+age_list = [age for entry in filtered_list for key, age in entry.items() if
+            key in ['age_of_diagnose', 'age_of_diagnose_left', 'age_of_diagnose_right']]
+age_list = [age for age in age_list if age is not None]
+age_list.append(age_of_diagnose_by_breast_cancer)
+age_list.append(age_of_diagnose_by_breast_cancer_right)
+age_list.append(age_of_diagnose_by_breast_cancer_left)
+age_a = min(age_list)
+history_a = personal_breast_cancer_history or bool(filtered_list)
+
+# history_b --------------------------------------------------
+filtered_list = [entry for entry in familial_breast_cancer_list if entry.get('degree') in [1, 2] and entry.get('side') == "twoSide"]
+
+for entry in filtered_list:
+    if entry.get("age_of_diagnose_left") &gt; 45 and entry.get("age_of_diagnose_right") &gt; 45:
+        bool_b = True  # both_after_45
+
+history_b = personal_twoside_breast_cancer_history or bool(filtered_list)
+bool_b = (personal_twoside_breast_cancer_history and age_of_diagnose_by_breast_cancer_left &gt; 45 and age_of_diagnose_by_breast_cancer_right &gt; 45) or bool_b
+
+
+# history_c --------------------------------------------------
+filtered_list = [entry for entry in familial_ovary_cancer_list if entry.get('degree') in [1, 2]]
+age_list = [age for entry in filtered_list for key, age in entry.items() if
+            key == 'age_of_diagnose']
+age_list = [age for age in age_list if age is not None]
+age_list.append(age_of_diagnose_by_ovary_cancer)
+age_c = min(age_list)
+history_c = personal_ovary_cancer_history or bool(filtered_list)
+
+# history_d --------------------------------------------------
+filtered_list = [entry for entry in familial_pancreatic_cancer_list if entry.get('degree') == 1]
+age_list = [age for entry in filtered_list for key, age in entry.items() if
+            key == 'age_of_diagnose']
+age_list = [age for age in age_list if age is not None]
+age_list.append(age_of_diagnose_by_pancreatic_cancer)
+age_d = min(age_list)
+history_d = personal_pancreatic_cancer_history or bool(filtered_list)
+
+# history_e --------------------------------------------------
+filtered_list = [entry for entry in familial_prostate_cancer_list if entry.get('degree') == 1]
+age_list = [age for entry in filtered_list for key, age in entry.items() if
+            key == 'age_of_diagnose']
+age_list = [age for age in age_list if age is not None]
+age_list.append(1000)
+age_e = min(age_list)
+history_e = bool(filtered_list)
+
+# history_f --------------------------------------------------
+breast_cancer_exist = personal_breast_cancer_history or familial_breast_cancer_history
+flag_fam_br_before_50 = False
+flag_fam_ov_before_60 = False
+flag_fam_pn_before_60 = False
+flag_fam_pr_before_60 = False
+if total_cancer_number &gt;= 2 and breast_cancer_exist:
+    if total_brest_cancer_number &gt;= 2:
+        history_f4 = True
+        for entry in familial_breast_cancer_list:
+            if entry.get('age_of_diagnose', 1000) &lt; 50 or entry.get('age_of_diagnose_left', 1000) &lt; 50 or entry.get('age_of_diagnose_right', 1000) &lt; 50:
+                flag_fam_br_before_50 = True
+        if age_of_diagnose_by_breast_cancer &lt; 50 or age_of_diagnose_by_breast_cancer_right &lt; 50 or age_of_diagnose_by_breast_cancer_left &lt; 50 or flag_fam_br_before_50:
+            history_f5 = True
+    else:  # cancers other than breast
+        if familial_ovary_cancer_history or personal_ovary_cancer_history:
+            history_f4 = True
+            for entry in familial_ovary_cancer_list:
+                if entry.get('age_of_diagnose') &lt; 60:
+                    flag_fam_ov_before_60 = True
+            if age_of_diagnose_by_ovary_cancer &lt; 60 or flag_fam_ov_before_60:
+                history_f5 = True
+
+        if familial_pancreatic_cancer_history or personal_pancreatic_cancer_history:
+            history_f4 = True
+            for entry in familial_pancreatic_cancer_list:
+                if entry.get('age_of_diagnose') &lt; 60:
+                    flag_fam_pn_before_60 = True
+            if age_of_diagnose_by_pancreatic_cancer &lt; 60 or flag_fam_pn_before_60:
+                history_f5 = True
+        if familial_prostate_cancer_history:
+            history_f4 = True
+            for entry in familial_prostate_cancer_list:
+                if entry.get('age_of_diagnose') &lt; 45:
+                    flag_fam_pr_before_60 = True
+            if flag_fam_pr_before_60:
+                history_f5 = True
+
+# history_g --------------------------------------------------
+filtered_list = [entry for entry in familial_men_breast_cancer_list if entry.get('degree') in [1, 2]]
+history_g = bool(filtered_list)
+
+</bpmn:script>
+    </bpmn:scriptTask>
+    <bpmn:businessRuleTask id="Activity_156alxa" name="grouping">
+      <bpmn:extensionElements>
+        <spiffworkflow:calledDecisionId>decision_gjea6x3</spiffworkflow:calledDecisionId>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1ubjl89</bpmn:incoming>
+      <bpmn:outgoing>Flow_15baujn</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:scriptTask id="Activity_0fpc5e9" name="timing">
+      <bpmn:extensionElements>
+        <spiffworkflow:instructionsForEndUser />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_15baujn</bpmn:incoming>
+      <bpmn:outgoing>Flow_16p75ec</bpmn:outgoing>
+      <bpmn:ioSpecification>
+        <bpmn:outputSet />
+      </bpmn:ioSpecification>
+      <bpmn:script>
+def latest_date(dates):
+    return max(dates, key=lambda date: (date[1], date[0]))
+
+
+def date_calc(month, year, additional_years):
+    if month + 3 &gt; 12:
+        date = [(month + 3) % 12, year + additional_years + 1]
+    else:
+        date = [month + 3, year + additional_years]
+    return date
+
+clinical_examination_time_a = None
+clinical_examination_time_b = None
+# clinical examination time
+if subgroup == "1.1":
+    clinical_examination_time_a = latest_date([[clinical_examination_month, clinical_examination_year + 1],
+                                          [ultrasound_month, ultrasound_year + 1],
+                                          [mammography_month, mammography_year + 1],
+                                          [self_assessment_month, self_assessment_year],
+                                          [birth_month, birth_year + 30]])
+
+    clinical_examination_time_b = latest_date([[clinical_examination_month, clinical_examination_year + 2],
+                                          [ultrasound_month, ultrasound_year + 2],
+                                          [mammography_month, mammography_year + 2],
+                                          date_calc(self_assessment_month, self_assessment_year, 0),
+                                          date_calc(birth_month, birth_year, 30)])
+
+elif subgroup in ["1.2", "1.3", "1.4"]:
+    clinical_examination_time_a = latest_date([[clinical_examination_month, clinical_examination_year + 1],
+                                          [ultrasound_month, ultrasound_year + 1],
+                                          [mammography_month, mammography_year + 1],
+                                          [self_assessment_month, self_assessment_year]])
+
+    clinical_examination_time_b = latest_date([[clinical_examination_month, clinical_examination_year + 2],
+                                          [ultrasound_month, ultrasound_year + 2],
+                                          [mammography_month, mammography_year + 2],
+                                          date_calc(self_assessment_month, self_assessment_year, 0)])
+
+imaging_time_a = None
+imaging_time_b = None
+# imaging time
+if subgroup in ["1.1", "1.2"]:
+    imaging_time_a = [birth_month, birth_year + 45]
+
+elif subgroup == "1.3":
+    imaging_time_a = latest_date([
+        [ultrasound_month, ultrasound_year + 1],
+        [mammography_month, mammography_year + 1],
+        [birth_month, birth_year + 45]])
+
+    imaging_time_b = latest_date([
+        [ultrasound_month, ultrasound_year + 2],
+        [mammography_month, mammography_year + 2],
+        date_calc(birth_month, birth_year, 45)])
+
+elif subgroup == "1.4":
+    imaging_time_a = latest_date([
+        [ultrasound_month, ultrasound_year + 1],
+        [mammography_month, mammography_year + 1],
+        [birth_month, birth_year + 45],
+        [self_assessment_month, self_assessment_year]])
+
+    imaging_time_b = latest_date([
+        [ultrasound_month, ultrasound_year + 2],
+        [mammography_month, mammography_year + 2],
+        date_calc(birth_month, birth_year, 45),
+        date_calc(self_assessment_month, self_assessment_year, 0)])
+</bpmn:script>
+    </bpmn:scriptTask>
+    <bpmn:sequenceFlow id="Flow_1ubjl89" sourceRef="Activity_0vszxia" targetRef="Activity_156alxa" />
+    <bpmn:sequenceFlow id="Flow_15baujn" sourceRef="Activity_156alxa" targetRef="Activity_0fpc5e9" />
+    <bpmn:sequenceFlow id="Flow_16p75ec" sourceRef="Activity_0fpc5e9" targetRef="EndEvent_1" />
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_17db3yp</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_1fox6sq" messageRef="start">
+        <bpmn:extensionElements>
+          <spiffworkflow:messageVariable />
+        </bpmn:extensionElements>
+      </bpmn:messageEventDefinition>
+    </bpmn:startEvent>
+    <bpmn:userTask id="Activity_0qpzdpu" name="Example manual task">
+      <bpmn:extensionElements>
+        <spiffworkflow:instructionsForEndUser>This is an example **Manual Task**. A **Manual Task** is designed to allow someone to complete a task outside of the system and then report back that it is complete. You can click the *Continue* button to proceed. When you are done running this process, you can edit the **Process Model** to include a:
+
+ * **Script Task** - write a short snippet of python code to update some data
+ *  **User Task** - generate a form that collects information from a user
+ * **Service Task** - communicate with an external API to fetch or update some data.
+
+You can also change the text you are reading here by updating the *Instructions* on this example manual task.</spiffworkflow:instructionsForEndUser>
+        <spiffworkflow:properties>
+          <spiffworkflow:property name="formJsonSchemaFilename" value="userdata-schema.json" />
+          <spiffworkflow:property name="formUiSchemaFilename" value="userdata-uischema.json" />
+        </spiffworkflow:properties>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_17db3yp</bpmn:incoming>
+      <bpmn:outgoing>Flow_12pkbxb</bpmn:outgoing>
+    </bpmn:userTask>
+  </bpmn:process>
+  <bpmn:message id="start" name="start" />
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_test_f0v3xpd">
+      <bpmndi:BPMNShape id="Event_14za570_di" bpmnElement="EndEvent_1">
+        <dc:Bounds x="742" y="312" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1ichxr8_di" bpmnElement="Activity_18b3xbg">
+        <dc:Bounds x="1000" y="137" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_08x8d9t_di" bpmnElement="Activity_1k8s2sn">
+        <dc:Bounds x="10" y="137" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0gb9w2r_di" bpmnElement="Activity_1iie0zz">
+        <dc:Bounds x="130" y="137" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0gpoirq_di" bpmnElement="Activity_1hzj22o">
+        <dc:Bounds x="250" y="137" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1t1m9sg_di" bpmnElement="Activity_06gy62z">
+        <dc:Bounds x="370" y="137" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_08oktz9_di" bpmnElement="Activity_0y55je8">
+        <dc:Bounds x="490" y="137" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_122y2nn_di" bpmnElement="Activity_0zkv4ai">
+        <dc:Bounds x="610" y="137" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0kgh0nj_di" bpmnElement="Activity_0nvhm9b">
+        <dc:Bounds x="730" y="137" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_02oit8r_di" bpmnElement="Activity_0vszxia">
+        <dc:Bounds x="1150" y="137" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_14aa4td_di" bpmnElement="Activity_01fucpm">
+        <dc:Bounds x="880" y="137" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0199wdm_di" bpmnElement="Activity_156alxa">
+        <dc:Bounds x="1150" y="290" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_01dbg4c_di" bpmnElement="Activity_0fpc5e9">
+        <dc:Bounds x="1000" y="290" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_118y3gb_di" bpmnElement="StartEvent_1">
+        <dc:Bounds x="-218" y="159" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1yulauf_di" bpmnElement="Activity_0qpzdpu">
+        <dc:Bounds x="-130" y="137" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_17db3yp_di" bpmnElement="Flow_17db3yp">
+        <di:waypoint x="-182" y="177" />
+        <di:waypoint x="-130" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_12pkbxb_di" bpmnElement="Flow_12pkbxb">
+        <di:waypoint x="-30" y="177" />
+        <di:waypoint x="10" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1cy9s1i_di" bpmnElement="Flow_1cy9s1i">
+        <di:waypoint x="1100" y="177" />
+        <di:waypoint x="1150" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0sisgnn_di" bpmnElement="Flow_0sisgnn">
+        <di:waypoint x="110" y="177" />
+        <di:waypoint x="130" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1rfqeqp_di" bpmnElement="Flow_1rfqeqp">
+        <di:waypoint x="230" y="177" />
+        <di:waypoint x="250" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1n6qek2_di" bpmnElement="Flow_1n6qek2">
+        <di:waypoint x="350" y="177" />
+        <di:waypoint x="370" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1he6jhc_di" bpmnElement="Flow_1he6jhc">
+        <di:waypoint x="470" y="177" />
+        <di:waypoint x="490" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_00p0zwn_di" bpmnElement="Flow_00p0zwn">
+        <di:waypoint x="590" y="177" />
+        <di:waypoint x="610" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1fziqbg_di" bpmnElement="Flow_1fziqbg">
+        <di:waypoint x="710" y="177" />
+        <di:waypoint x="730" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_06jiy8g_di" bpmnElement="Flow_06jiy8g">
+        <di:waypoint x="830" y="177" />
+        <di:waypoint x="880" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_195vww7_di" bpmnElement="Flow_195vww7">
+        <di:waypoint x="980" y="177" />
+        <di:waypoint x="1000" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1ubjl89_di" bpmnElement="Flow_1ubjl89">
+        <di:waypoint x="1200" y="217" />
+        <di:waypoint x="1200" y="290" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_15baujn_di" bpmnElement="Flow_15baujn">
+        <di:waypoint x="1150" y="330" />
+        <di:waypoint x="1100" y="330" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_16p75ec_di" bpmnElement="Flow_16p75ec">
+        <di:waypoint x="1000" y="330" />
+        <di:waypoint x="778" y="330" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

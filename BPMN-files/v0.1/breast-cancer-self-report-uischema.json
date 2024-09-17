@@ -1,0 +1,59 @@
+{
+  "ui:theme": "mui",
+  "clinical_assessment": {
+    "ui:widget": "radio",
+    "ui:options": {
+      "inline": true
+    }
+  },
+  "biopsy_hist": {
+    "ui:widget": "radio",
+    "ui:options": {
+      "inline": true
+    }
+  },
+  "chest_radiotherapy_hist": {
+    "ui:widget": "radio",
+    "ui:options": {
+      "inline": true
+    }
+  },
+  "family_hist": {
+    "ui:widget": "radio",
+    "ui:options": {
+      "inline": true
+    }
+  },
+  "age_of_diagnose": {
+    "ui:autofocus": true,
+    "ui:emptyValue": "",
+    "ui:placeholder": "ui:emptyValue causes this field to always be valid despite being required",
+    "ui:autocomplete": "family-name",
+    "ui:enableMarkdownInDescription": true,
+    "ui:description": "Make text **bold** or *italic*. Take a look at other options [here](https://probablyup.com/markdown-to-jsx/)."
+  },
+  "biopsy_date": {
+    "ui:autofocus": true,
+    "ui:emptyValue": "",
+    "ui:placeholder": "ui:emptyValue causes this field to always be valid despite being required",
+    "ui:autocomplete": "family-name",
+    "ui:enableMarkdownInDescription": true,
+    "ui:description": "Make text **bold** or *italic*. Take a look at other options [here](https://probablyup.com/markdown-to-jsx/)."
+  },
+  "birth_date": {
+    "ui:autofocus": true,
+    "ui:emptyValue": "",
+    "ui:placeholder": "ui:emptyValue causes this field to always be valid despite being required",
+    "ui:autocomplete": "family-name",
+    "ui:enableMarkdownInDescription": true,
+    "ui:description": "Make text **bold** or *italic*. Take a look at other options [here](https://probablyup.com/markdown-to-jsx/)."
+  },
+  "radiotherapy_date": {
+    "ui:autofocus": true,
+    "ui:emptyValue": "",
+    "ui:placeholder": "ui:emptyValue causes this field to always be valid despite being required",
+    "ui:autocomplete": "family-name",
+    "ui:enableMarkdownInDescription": true,
+    "ui:description": "Make text **bold** or *italic*. Take a look at other options [here](https://probablyup.com/markdown-to-jsx/)."
+  }
+}

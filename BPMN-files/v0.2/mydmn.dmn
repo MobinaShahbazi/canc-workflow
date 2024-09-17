@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="Definitions_76910d7" name="DRD" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="decision_hqz6pxj" name="mydmn">
+    <decisionTable id="decisionTable_1" hitPolicy="FIRST">
+      <input id="input_1">
+        <inputExpression id="inputExpression_1" typeRef="number">
+          <text>num</text>
+        </inputExpression>
+      </input>
+      <output id="output_1" name="answer" typeRef="string" />
+      <rule id="DecisionRule_0wehbv9">
+        <inputEntry id="UnaryTests_0svu690">
+          <text>[0..12]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0xi2nnm">
+          <text>"a"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0bn6qfn">
+        <inputEntry id="UnaryTests_0o9ehhk">
+          <text>10</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_06gcdyg">
+          <text>"b"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_1cykosu">
+      <dmndi:DMNShape id="DMNShape_1dhfq2s" dmnElementRef="decision_hqz6pxj">
+        <dc:Bounds height="80" width="180" x="157" y="151" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

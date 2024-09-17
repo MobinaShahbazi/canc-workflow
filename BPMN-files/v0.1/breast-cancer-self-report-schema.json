@@ -1,0 +1,112 @@
+{
+  "required": [
+    "family_hist"
+  ],
+  "properties": {
+    "clinical_assessment": {
+      "type": "boolean",
+      "title": "Clinical Assessment",
+      "oneOf": [
+        {
+          "title": "Natural",
+          "const": true,
+          "default": false
+        },
+        {
+          "title": "Unnatural",
+          "const": false
+        }
+      ]
+    },
+    "biopsy_hist": {
+      "type": "integer",
+      "title": "Biopsy History",
+      "oneOf": [
+        {
+          "title": "None",
+          "const": 0
+        },
+        {
+          "title": "Has Result",
+          "const": 1
+        },
+        {
+          "title": "LCIS, ALH or ADH",
+          "const": 2
+        },
+        {
+          "title": "Unclear",
+          "const": 9
+        }
+      ]
+    },
+    "chest_radiotherapy_hist": {
+      "type": "boolean",
+      "title": "Chest Radiotherapy History",
+      "oneOf": [
+        {
+          "title": "True",
+          "const": true
+        },
+        {
+          "title": "False",
+          "const": false
+        }
+      ]
+    },
+    "personal_breast_cancer_hist": {
+      "type": "boolean",
+      "title": "Personal Breast Cancer History"
+    },
+    "personal_ovarian_cancer_hist": {
+      "type": "boolean",
+      "title": "Personal Ovarian Cancer History"
+    },
+    "personal_pancreatic_cancer_hist": {
+      "type": "boolean",
+      "title": "Personal Pancreatic Cancer History"
+    },
+    "family_hist": {
+      "type": "boolean",
+      "title": "Familial History",
+      "oneOf": [
+        {
+          "title": "True",
+          "const": true
+        },
+        {
+          "title": "False",
+          "const": false
+        }
+      ]
+    },
+    "risk": {
+      "type": "string",
+      "title": "Risk",
+      "default": "low"
+    },
+    "age_of_diagnose": {
+      "type": "number",
+      "title": "Age Of Diagnose",
+      "default": 40
+    },
+    "biopsy_date": {
+      "type": "number",
+      "title": "Biopsy Date",
+      "default": 1390
+    },
+    "birth_date": {
+      "type": "number",
+      "title": "Birth Date",
+      "default": 1340
+    },
+    "radiotherapy_date": {
+      "type": "number",
+      "title": "Radiotherapy date",
+      "default": 1390
+    }
+  },
+  "title": "Text Field",
+  "description": "A simple text field that is required, has a default value, sets a placeholder, includes a description. (field name will be 'firstname')",
+  "type": "object"
+}

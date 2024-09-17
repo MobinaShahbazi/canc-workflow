@@ -1,0 +1,33 @@
+{
+  "test_case_1": {
+    "tasks": {
+      "self_report1": {
+        "data": [
+                            {
+            "clinical_assessment": true,
+            "biopsy_hist": 0,
+            "chest_radiotherapy_hist": false,
+            "personal_breast_cancer_hist": false,
+            "personal_ovarian_cancer_hist": false,
+            "personal_pancreatic_cancer_hist": true,
+            "family_hist": true,
+            "risk": "mediocare"
+          }
+        ]
+      }
+    },
+    "expected_output_json":                 
+    {
+  "clinical_assessment": true,
+  "biopsy_hist": 0,
+  "chest_radiotherapy_hist": false,
+  "personal_breast_cancer_hist": false,
+  "personal_ovarian_cancer_hist": false,
+  "personal_pancreatic_cancer_hist": true,
+  "family_hist": true,
+  "risk": "mediocare",
+  "personal_other_cancer_hist": true,
+  "intervention_group": "4.2",
+  "sub_group": "4.2.2"
+}}
+}

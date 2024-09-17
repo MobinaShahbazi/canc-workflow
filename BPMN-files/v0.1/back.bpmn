@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:spiffworkflow="http://spiffworkflow.org/bpmn/schema/1.0/core" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_96f6665" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.0.0-dev">
+  <bpmn:process id="Process_breast_cancer_screening_iy9wazv" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_17db3yp</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_17db3yp" sourceRef="StartEvent_1" targetRef="self_report1" />
+    <bpmn:userTask id="self_report1" name="Example manual task">
+      <bpmn:extensionElements>
+        <spiffworkflow:instructionsForEndUser>This is an example **Manual Task**. A **Manual Task** is designed to allow someone to complete a task outside of the system and then report back that it is complete. You can click the *Continue* button to proceed. When you are done running this process, you can edit the **Process Model** to include a:
+
+ * **Script Task** - write a short snippet of python code to update some data
+ *  **User Task** - generate a form that collects information from a user
+ * **Service Task** - communicate with an external API to fetch or update some data.
+
+You can also change the text you are reading here by updating the *Instructions* on this example manual task.</spiffworkflow:instructionsForEndUser>
+        <spiffworkflow:properties>
+          <spiffworkflow:property name="formJsonSchemaFilename" value="breast-cancer-self-report-schema.json" />
+          <spiffworkflow:property name="formUiSchemaFilename" value="breast-cancer-self-report-uischema.json" />
+        </spiffworkflow:properties>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_17db3yp</bpmn:incoming>
+      <bpmn:outgoing>Flow_0ldm0xt</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:businessRuleTask id="Activity_1myj28x">
+      <bpmn:extensionElements>
+        <spiffworkflow:calledDecisionId>decision_d2zp7hy</spiffworkflow:calledDecisionId>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0ipudnv</bpmn:incoming>
+      <bpmn:outgoing>Flow_039jgj8</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:manualTask id="Activity_1g3pge0">
+      <bpmn:extensionElements>
+        <spiffworkflow:instructionsForEndUser># Breast Cancer Screening Result
+## Intervention group: {{ intervention_group }}</spiffworkflow:instructionsForEndUser>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0yzsdk3</bpmn:incoming>
+      <bpmn:outgoing>Flow_0grqqzt</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:endEvent id="Event_1va02sd">
+      <bpmn:incoming>Flow_0grqqzt</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0grqqzt" sourceRef="Activity_1g3pge0" targetRef="Event_1va02sd" />
+    <bpmn:sequenceFlow id="Flow_0ldm0xt" sourceRef="self_report1" targetRef="Activity_0qosqhz" />
+    <bpmn:sequenceFlow id="Flow_0ipudnv" sourceRef="Activity_0qosqhz" targetRef="Activity_1myj28x" />
+    <bpmn:scriptTask id="Activity_0qosqhz">
+      <bpmn:incoming>Flow_0ldm0xt</bpmn:incoming>
+      <bpmn:outgoing>Flow_0ipudnv</bpmn:outgoing>
+      <bpmn:script>personal_other_cancer_hist = personal_ovarian_cancer_hist or personal_pancreatic_cancer_hist</bpmn:script>
+    </bpmn:scriptTask>
+    <bpmn:sequenceFlow id="Flow_039jgj8" sourceRef="Activity_1myj28x" targetRef="Activity_1rh9ew0" />
+    <bpmn:businessRuleTask id="Activity_1rh9ew0">
+      <bpmn:extensionElements>
+        <spiffworkflow:calledDecisionId>decision_vcl3uh0</spiffworkflow:calledDecisionId>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_039jgj8</bpmn:incoming>
+      <bpmn:outgoing>Flow_0ld9fai</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:businessRuleTask id="Activity_0cvdyvn">
+      <bpmn:extensionElements>
+        <spiffworkflow:calledDecisionId>decision_ywxzp8r</spiffworkflow:calledDecisionId>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0ld9fai</bpmn:incoming>
+      <bpmn:outgoing>Flow_10io97c</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:sequenceFlow id="Flow_0ld9fai" sourceRef="Activity_1rh9ew0" targetRef="Activity_0cvdyvn" />
+    <bpmn:sequenceFlow id="Flow_10io97c" sourceRef="Activity_0cvdyvn" targetRef="Activity_0k76zaw" />
+    <bpmn:sequenceFlow id="Flow_0yzsdk3" sourceRef="Activity_0k76zaw" targetRef="Activity_1g3pge0" />
+    <bpmn:businessRuleTask id="Activity_0k76zaw">
+      <bpmn:extensionElements>
+        <spiffworkflow:calledDecisionId>decision_9d3e6cf</spiffworkflow:calledDecisionId>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_10io97c</bpmn:incoming>
+      <bpmn:outgoing>Flow_0yzsdk3</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:textAnnotation id="TextAnnotation_0tpebr7">
+      <bpmn:text>Determine Patient Group</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_1lw2ey2" associationDirection="None" sourceRef="Activity_1myj28x" targetRef="TextAnnotation_0tpebr7" />
+    <bpmn:textAnnotation id="TextAnnotation_11ypfgd">
+      <bpmn:text>Screening Self Report Form</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_1f3t1e2" associationDirection="None" sourceRef="self_report1" targetRef="TextAnnotation_11ypfgd" />
+    <bpmn:textAnnotation id="TextAnnotation_19wn972">
+      <bpmn:text>Display Results</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_1q54xs4" associationDirection="None" sourceRef="Activity_1g3pge0" targetRef="TextAnnotation_19wn972" />
+    <bpmn:textAnnotation id="TextAnnotation_1tdcapr">
+      <bpmn:text>Determine Patient Subgroup</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_0111fqy" associationDirection="None" sourceRef="Activity_1rh9ew0" targetRef="TextAnnotation_1tdcapr" />
+    <bpmn:textAnnotation id="TextAnnotation_0wmvxw7">
+      <bpmn:text>Determine Clinical Examination Details</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_0wn0mn8" associationDirection="None" sourceRef="Activity_0cvdyvn" targetRef="TextAnnotation_0wmvxw7" />
+    <bpmn:textAnnotation id="TextAnnotation_109hs03">
+      <bpmn:text>Ultrasound</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_1dv0zsb" associationDirection="None" sourceRef="Activity_0k76zaw" targetRef="TextAnnotation_109hs03" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_breast_cancer_screening_iy9wazv">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="-198" y="159" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_063q8bo_di" bpmnElement="self_report1">
+        <dc:Bounds x="-60" y="137" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0gjueym_di" bpmnElement="Activity_1myj28x">
+        <dc:Bounds x="260" y="137" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_00b1nxx_di" bpmnElement="Activity_1g3pge0">
+        <dc:Bounds x="900" y="137" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1va02sd_di" bpmnElement="Event_1va02sd">
+        <dc:Bounds x="1092" y="159" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_059egwi_di" bpmnElement="Activity_0qosqhz">
+        <dc:Bounds x="100" y="137" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_141okz3_di" bpmnElement="Activity_1rh9ew0">
+        <dc:Bounds x="420" y="137" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0dblk67_di" bpmnElement="Activity_0cvdyvn">
+        <dc:Bounds x="580" y="137" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_15k43vf_di" bpmnElement="Activity_0k76zaw">
+        <dc:Bounds x="740" y="137" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_0tpebr7_di" bpmnElement="TextAnnotation_0tpebr7">
+        <dc:Bounds x="265" y="16" width="100" height="41" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_11ypfgd_di" bpmnElement="TextAnnotation_11ypfgd">
+        <dc:Bounds x="-56" y="10" width="100" height="41" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_19wn972_di" bpmnElement="TextAnnotation_19wn972">
+        <dc:Bounds x="900" y="22" width="100" height="30" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_1tdcapr_di" bpmnElement="TextAnnotation_1tdcapr">
+        <dc:Bounds x="420" y="23" width="120" height="55" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_0wmvxw7_di" bpmnElement="TextAnnotation_0wmvxw7">
+        <dc:Bounds x="580" y="16" width="150" height="70" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_109hs03_di" bpmnElement="TextAnnotation_109hs03">
+        <dc:Bounds x="740" y="22" width="100.00000357767622" height="29.997068720434086" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_17db3yp_di" bpmnElement="Flow_17db3yp">
+        <di:waypoint x="-162" y="177" />
+        <di:waypoint x="-60" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0grqqzt_di" bpmnElement="Flow_0grqqzt">
+        <di:waypoint x="1000" y="177" />
+        <di:waypoint x="1092" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0ldm0xt_di" bpmnElement="Flow_0ldm0xt">
+        <di:waypoint x="40" y="177" />
+        <di:waypoint x="100" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0ipudnv_di" bpmnElement="Flow_0ipudnv">
+        <di:waypoint x="200" y="177" />
+        <di:waypoint x="260" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_039jgj8_di" bpmnElement="Flow_039jgj8">
+        <di:waypoint x="360" y="177" />
+        <di:waypoint x="420" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0ld9fai_di" bpmnElement="Flow_0ld9fai">
+        <di:waypoint x="520" y="177" />
+        <di:waypoint x="580" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_10io97c_di" bpmnElement="Flow_10io97c">
+        <di:waypoint x="680" y="177" />
+        <di:waypoint x="740" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0yzsdk3_di" bpmnElement="Flow_0yzsdk3">
+        <di:waypoint x="840" y="177" />
+        <di:waypoint x="900" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_1lw2ey2_di" bpmnElement="Association_1lw2ey2">
+        <di:waypoint x="310" y="137" />
+        <di:waypoint x="310" y="57" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_1f3t1e2_di" bpmnElement="Association_1f3t1e2">
+        <di:waypoint x="-10" y="137" />
+        <di:waypoint x="-10" y="51" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_1q54xs4_di" bpmnElement="Association_1q54xs4">
+        <di:waypoint x="950" y="137" />
+        <di:waypoint x="950" y="52" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_0111fqy_di" bpmnElement="Association_0111fqy">
+        <di:waypoint x="470" y="137" />
+        <di:waypoint x="470" y="78" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_0wn0mn8_di" bpmnElement="Association_0wn0mn8">
+        <di:waypoint x="630" y="137" />
+        <di:waypoint x="630" y="86" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_1dv0zsb_di" bpmnElement="Association_1dv0zsb">
+        <di:waypoint x="790" y="137" />
+        <di:waypoint x="790" y="52" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="Definitions_76910d7" name="DRD" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="decision_9d3e6cf" name="ultrasound">
+    <decisionTable id="decisionTable_1">
+      <input id="input_1">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text>intervention_group</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_14z59hx">
+        <inputExpression id="LiteralExpression_0gr8tri" typeRef="string">
+          <text>sub_group</text>
+        </inputExpression>
+      </input>
+      <output id="output_1" name="ultrasound_min_age" typeRef="number" />
+      <output id="OutputClause_1ikfhup" name="ultrasound_threshold" typeRef="number" biodi:width="212" />
+      <output id="OutputClause_001dx8x" label="ultrasound_frequency" typeRef="string" />
+      <rule id="DecisionRule_19l5ify">
+        <inputEntry id="UnaryTests_0obhj6i">
+          <text>"1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1joie4d">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ly4ega">
+          <text>45</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0odro0c">
+          <text>45</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0btl43i">
+          <text>"each 1-2 year"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1to84e9">
+        <inputEntry id="UnaryTests_00ts2eo">
+          <text>"2.1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1p6kth7">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1lhlety">
+          <text>25</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0owtsn1">
+          <text>biopsy_date+1-birth_date</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bt8ba1">
+          <text>"each year"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1wjd7r4">
+        <inputEntry id="UnaryTests_0zfy0ql">
+          <text>"4.1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qxfg45">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1bariig">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0m7vwgx">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01jsiz0">
+          <text>"doctor decision"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1umg1ks">
+        <inputEntry id="UnaryTests_18utqjg">
+          <text>"4.2"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0toiit7">
+          <text>"4.2.1"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1k2zz3d">
+          <text>40</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1u07nh3">
+          <text>40</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01v13rp">
+          <text>"each 1-2 year"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_12w55nm">
+        <inputEntry id="UnaryTests_0w34qyq">
+          <text>"4.2"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bsi6tp">
+          <text>"4.2.2"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0b3r3o9">
+          <text>25</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jg0k4v">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ttpf4i">
+          <text>"each year"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_08mvez7">
+        <inputEntry id="UnaryTests_16fba2w">
+          <text>"4.2"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1e4gwwp">
+          <text>"4.2.3"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_05p8hp7">
+          <text>25</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1074mrn">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0njp0fg">
+          <text>"each year"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1iiyabf">
+        <inputEntry id="UnaryTests_1p6ibv7">
+          <text>"5"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0guy6tf">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0huvsv2">
+          <text>25</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0n6ujwi">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0k1g3z6">
+          <text>"each year"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_1cykosu">
+      <dmndi:DMNShape id="DMNShape_1dhfq2s" dmnElementRef="decision_9d3e6cf">
+        <dc:Bounds height="80" width="180" x="157" y="151" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

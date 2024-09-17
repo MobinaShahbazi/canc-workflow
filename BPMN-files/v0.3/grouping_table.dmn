@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="Definitions_76910d7" name="DRD" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="decision_gjea6x3" name="grouping_table">
+    <decisionTable id="decisionTable_1">
+      <input id="InputClause_04ayqjy">
+        <inputExpression id="LiteralExpression_0oolaxl" typeRef="number">
+          <text>age</text>
+        </inputExpression>
+      </input>
+      <input id="input_1">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text>parameter1</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1cbb49s">
+        <inputExpression id="LiteralExpression_1sy21xz" typeRef="string">
+          <text>parameter2</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1xvwket">
+        <inputExpression id="LiteralExpression_1atu7zw" typeRef="string">
+          <text>parameter3</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0meccoq">
+        <inputExpression id="LiteralExpression_1pflyj5" typeRef="string">
+          <text>parameter4</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1mphrfp">
+        <inputExpression id="LiteralExpression_14nizfv" typeRef="string">
+          <text>parameter5</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1u1n72c">
+        <inputExpression id="LiteralExpression_0vlozgy" typeRef="string">
+          <text>parameter6</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0tn8cr5">
+        <inputExpression id="LiteralExpression_0rheiep" typeRef="string">
+          <text>parameter7</text>
+        </inputExpression>
+      </input>
+      <output id="output_1" name="group" typeRef="string" />
+      <output id="OutputClause_1kqj6w3" name="subgroup" typeRef="string" />
+      <rule id="DecisionRule_0vsg69y">
+        <inputEntry id="UnaryTests_1tnclsl">
+          <text>&lt; 30</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ahue2b">
+          <text>"1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0y50on4">
+          <text>? in ["1", "2.1"]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ff3feu">
+          <text>? in ["1", "2.1"]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0sq7f92">
+          <text>? in ["1", "2.1"]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0eh2f42">
+          <text>"1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qil1fp">
+          <text>"1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0d2nme3">
+          <text>"1"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0n4kj6f">
+          <text>"1"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05ih2uv">
+          <text>"1.1"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_08gj8l0">
+        <inputEntry id="UnaryTests_0uwc2gt">
+          <text>30 &lt;= ? &lt;= 39</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1tknuvq">
+          <text>"1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pmmosl">
+          <text>? in ["1", "2.1"]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_162qt3t">
+          <text>? in ["1", "2.1"]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05udgpo">
+          <text>? in ["1", "2.1"]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08qr51t">
+          <text>"1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dbc30n">
+          <text>"1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11e4cgh">
+          <text>"1"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_01mmat9">
+          <text>"1"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dqzka6">
+          <text>"1.2"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0tc292f">
+        <inputEntry id="UnaryTests_10eu1kt">
+          <text>40 &lt;= ? &lt;= 44</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1te7t9u">
+          <text>"1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fop6dv">
+          <text>? in ["1", "2.1"]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mfovd6">
+          <text>? in ["1", "2.1"]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ni86a0">
+          <text>? in ["1", "2.1"]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15orcpf">
+          <text>"1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_035ss0u">
+          <text>"1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rqa8fi">
+          <text>"1"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_16t6qb6">
+          <text>"1"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0arbf8z">
+          <text>"1.3"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_13elir5">
+        <inputEntry id="UnaryTests_0ubj91q">
+          <text>45 &lt;= ? &lt;= 75</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1v5sacl">
+          <text>"1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15l0d8g">
+          <text>? in ["1", "2.1"]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07ak829">
+          <text>? in ["1", "2.1"]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06ub058">
+          <text>? in ["1", "2.1"]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1wav2x3">
+          <text>"1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03a86z5">
+          <text>"1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0z0olmq">
+          <text>"1"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0333n9i">
+          <text>"1"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_050milm">
+          <text>"1.4"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0o3olkw">
+        <inputEntry id="UnaryTests_02n5k05">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1c25hxy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_147w02l">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1di2hxg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_117zdbc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vujzo7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ultnem">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rx89tb">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1qy5bkg">
+          <text>"100"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_08b3b8b">
+          <text>"100.1"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_1cykosu">
+      <dmndi:DMNShape id="DMNShape_1dhfq2s" dmnElementRef="decision_gjea6x3">
+        <dc:Bounds height="80" width="180" x="157" y="151" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

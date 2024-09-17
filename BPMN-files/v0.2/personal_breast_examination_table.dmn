@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="Definitions_76910d7" name="DRD" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="decision_ke798m7" name="personal_breast_examination">
+    <decisionTable id="decisionTable_1" hitPolicy="FIRST">
+      <input id="input_1" biodi:width="150">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text>q18</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1h1jrl6" biodi:width="150">
+        <inputExpression id="LiteralExpression_1c8x0ug" typeRef="string">
+          <text>q19</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_19xzhhm" biodi:width="150">
+        <inputExpression id="LiteralExpression_1hdduji" typeRef="string">
+          <text>q20</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1gjpc0i" biodi:width="150">
+        <inputExpression id="LiteralExpression_09f4jw1" typeRef="string">
+          <text>q21</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0v0jev8" biodi:width="150">
+        <inputExpression id="LiteralExpression_1uunaso" typeRef="string">
+          <text>q22</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_071e4ij" biodi:width="150">
+        <inputExpression id="LiteralExpression_1rl0us1" typeRef="string">
+          <text>q23</text>
+        </inputExpression>
+      </input>
+      <output id="output_1" name="parameter1" typeRef="string" biodi:width="150" />
+      <rule id="DecisionRule_0klnh68">
+        <inputEntry id="UnaryTests_1xhwidm">
+          <text>"false"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1oh6ey8">
+          <text>"false"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1u1abkh">
+          <text>"false"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1crmipi">
+          <text>"false"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cdradi">
+          <text>"false"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kd6iay">
+          <text>"false"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_00847uj">
+          <text>"1"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1i1w0dk">
+        <inputEntry id="UnaryTests_0gqffap">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0i7fnhe">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0exq533">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_074v9pz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0kxwd7d">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ye3c41">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0at303t">
+          <text>"2"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_1cykosu">
+      <dmndi:DMNShape id="DMNShape_1dhfq2s" dmnElementRef="decision_ke798m7">
+        <dc:Bounds height="80" width="180" x="157" y="151" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

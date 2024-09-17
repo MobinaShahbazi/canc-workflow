@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="Definitions_76910d7" name="DRD" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="decision_vcl3uh0" name="risk management">
+    <decisionTable id="decisionTable_1">
+      <input id="input_1">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text>request["risk"]</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0ldudhu">
+        <inputExpression id="LiteralExpression_04z5rbk" typeRef="string">
+          <text>intervention_group</text>
+        </inputExpression>
+      </input>
+      <output id="output_1" name="sub_group" typeRef="string" />
+      <rule id="DecisionRule_18rath1">
+        <inputEntry id="UnaryTests_0f7d02i">
+          <text>"low"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03wq1z5">
+          <text>"4.1"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0q0bm7h">
+          <text>"4.1.1"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1u5r5lm">
+        <inputEntry id="UnaryTests_1t00hnh">
+          <text>"medium"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_173118u">
+          <text>"4.1"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1pujx0w">
+          <text>"4.1.2"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1gcd4re">
+        <inputEntry id="UnaryTests_1e0frvb">
+          <text>"high"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vypxkz">
+          <text>"4.1"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0sxwucf">
+          <text>"4.1.3"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1b8q18f">
+        <inputEntry id="UnaryTests_0xcnz6q">
+          <text>"low"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0d63cez">
+          <text>"4.2"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0mb82r2">
+          <text>"4.2.1"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1j5umt5">
+        <inputEntry id="UnaryTests_1yvhxgs">
+          <text>"medium"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rbswca">
+          <text>"4.2"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0jxre0a">
+          <text>"4.2.2"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_05kywt8">
+        <inputEntry id="UnaryTests_0eptqxq">
+          <text>"high"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1a4m024">
+          <text>"4.2"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ivquhq">
+          <text>"4.2.3"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1qtuwaw">
+        <inputEntry id="UnaryTests_0sfydzq">
+          <text>"low"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1x210zs">
+          <text>"6.1"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_17vvffw">
+          <text>"6.1.1"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_02fx4g1">
+        <inputEntry id="UnaryTests_08ww9s9">
+          <text>"medium"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yvc2vr">
+          <text>"6.1"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1hi3ykh">
+          <text>"6.1.2"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0e278fx">
+        <inputEntry id="UnaryTests_0pah71p">
+          <text>"high"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17dyonu">
+          <text>"6.1"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0cgwado">
+          <text>"6.1.3"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0zy3fmk">
+        <inputEntry id="UnaryTests_008yu69">
+          <text>"low"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06wllc9">
+          <text>"6.2"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1q7qs2k">
+          <text>"6.2.1"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_031gvwt">
+        <inputEntry id="UnaryTests_15h6nah">
+          <text>"medium"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xwg5tl">
+          <text>"6.2"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1qe4j02">
+          <text>"6.2.2"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0yib427">
+        <inputEntry id="UnaryTests_1dw7zuk">
+          <text>"high"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jggbf3">
+          <text>"6.2"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0qpoxi4">
+          <text>"6.2.3"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ujmuax">
+        <inputEntry id="UnaryTests_1gsq1n6">
+          <text>"low"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1deyhjb">
+          <text>"6.3"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0yhfwck">
+          <text>"6.3.1"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1wcxf4c">
+        <inputEntry id="UnaryTests_0twxd1g">
+          <text>"medium"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08in85p">
+          <text>"6.3"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1134s48">
+          <text>"6.3.2"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0wopzog">
+        <inputEntry id="UnaryTests_1suoze7">
+          <text>"high"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08lutgj">
+          <text>"6.3"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ef81n7">
+          <text>"6.3.3"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_1cykosu">
+      <dmndi:DMNShape id="DMNShape_1dhfq2s" dmnElementRef="decision_vcl3uh0">
+        <dc:Bounds height="80" width="180" x="157" y="151" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
