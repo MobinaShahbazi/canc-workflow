@@ -1,2 +1,0 @@
-Swagger: http://localhost:8000/v1.0/ui/
-login form: http://localhost:8001

@@ -1,3 +1,0 @@
-cd .\spiffworkflow-backend\
-cd .\bin\
-python .\get_token
