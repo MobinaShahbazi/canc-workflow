@@ -1,7 +1,7 @@
 import datetime
 import json
 from khayyam import JalaliDatetime
-
+from survey_response import response
 
 def reform_info(input_obj):
     self_assessment = {}
@@ -207,3 +207,5 @@ def reform_info(input_obj):
     self_assessment['total_cancer_number'] = total_cancer_number
 
     return self_assessment
+
+reformed_data = reform_info(response)
