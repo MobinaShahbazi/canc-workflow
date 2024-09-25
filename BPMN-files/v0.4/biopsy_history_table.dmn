@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="Definitions_76910d7" name="DRD" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="decision_y7q574n" name="biopsy_history">
+    <decisionTable id="decisionTable_1">
+      <input id="input_1">
+        <inputExpression id="inputExpression_1" typeRef="boolean">
+          <text>biopsy_history</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0ulnzjq">
+        <inputExpression id="LiteralExpression_17h4avu" typeRef="string">
+          <text>biopsy_result</text>
+        </inputExpression>
+      </input>
+      <output id="output_1" name="parameter5" typeRef="string" />
+      <rule id="DecisionRule_1ywim6s">
+        <inputEntry id="UnaryTests_0seoaji">
+          <text>False</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0td9gnd">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1k7jmsg">
+          <text>"1"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1jcot5m">
+        <inputEntry id="UnaryTests_1y6qb9f">
+          <text>True</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jsy073">
+          <text>"1"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ts8zbd">
+          <text>"2.1"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1vxbrna">
+        <inputEntry id="UnaryTests_0bz8i1x">
+          <text>True</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02smchx">
+          <text>"2"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ny88gv">
+          <text>"2.2"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1sittcn">
+        <inputEntry id="UnaryTests_1iw14my">
+          <text>True</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xqdz1z">
+          <text>"3"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1puhm5e">
+          <text>"2.3"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0jiaod7">
+        <inputEntry id="UnaryTests_097gbb8">
+          <text>True</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0sv46us">
+          <text>"4"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_181fcj0">
+          <text>"2.4"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0h6d3nn">
+        <inputEntry id="UnaryTests_1v1ccbm">
+          <text>True</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mtvwqd">
+          <text>"5"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0lyf08v">
+          <text>"2.5"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_1cykosu">
+      <dmndi:DMNShape id="DMNShape_1dhfq2s" dmnElementRef="decision_y7q574n">
+        <dc:Bounds height="80" width="180" x="157" y="151" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

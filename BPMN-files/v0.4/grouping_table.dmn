@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="Definitions_76910d7" name="DRD" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="decision_gjea6x3" name="grouping_table">
+    <decisionTable id="decisionTable_1">
+      <input id="InputClause_04ayqjy" biodi:width="150">
+        <inputExpression id="LiteralExpression_0oolaxl" typeRef="number">
+          <text>age</text>
+        </inputExpression>
+      </input>
+      <input id="input_1" biodi:width="150">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text>parameter1</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1cbb49s" biodi:width="200">
+        <inputExpression id="LiteralExpression_1sy21xz" typeRef="string">
+          <text>parameter2</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1xvwket" biodi:width="213">
+        <inputExpression id="LiteralExpression_1atu7zw" typeRef="string">
+          <text>parameter3</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0meccoq" biodi:width="212">
+        <inputExpression id="LiteralExpression_1pflyj5" typeRef="string">
+          <text>parameter4</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1mphrfp" biodi:width="217">
+        <inputExpression id="LiteralExpression_14nizfv" typeRef="string">
+          <text>parameter5</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1u1n72c" biodi:width="150">
+        <inputExpression id="LiteralExpression_0vlozgy" typeRef="string">
+          <text>parameter6</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0tn8cr5" biodi:width="150">
+        <inputExpression id="LiteralExpression_0rheiep" typeRef="string">
+          <text>parameter7</text>
+        </inputExpression>
+      </input>
+      <output id="output_1" name="group" typeRef="string" biodi:width="150" />
+      <rule id="DecisionRule_08gj8l0">
+        <inputEntry id="UnaryTests_0uwc2gt">
+          <text>20 &lt;= ?</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1tknuvq">
+          <text>"1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pmmosl">
+          <text>? in ["1", "2.1"]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_162qt3t">
+          <text>? in ["1", "2.1"]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05udgpo">
+          <text>? in ["1", "2.1"]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08qr51t">
+          <text>"1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dbc30n">
+          <text>"1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11e4cgh">
+          <text>"1"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_01mmat9">
+          <text>"1"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ous56c">
+        <inputEntry id="UnaryTests_0jalp7m">
+          <text>20 &lt;= ? </text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11uin82">
+          <text>"1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0e2jc5j">
+          <text>? in ["1", "2.1", "2.2"]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09lxqzg">
+          <text>? in ["1", "2.1", "2.2"]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_040aopn">
+          <text>? in ["1", "2.1", "2.2"]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tlyv5g">
+          <text>? in ["2.1", "2.2", "2.3"]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15q4ohf">
+          <text>"1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0b0huuk">
+          <text>"1"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1kpaow6">
+          <text>"2.1"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1kpiay2">
+        <inputEntry id="UnaryTests_0h8dms1">
+          <text>? &lt;= 1000</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07jul8i">
+          <text>"1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17q6657">
+          <text>? in ["1", "2.1", "2.2"]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lnz4aa">
+          <text>? in ["1", "2.1", "2.2"]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12yx2uk">
+          <text>? in ["1", "2.1", "2.2"]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lwkd8v">
+          <text>"2.4"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1li6emj">
+          <text>"1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0kj6rse">
+          <text>"1"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1xwmv08">
+          <text>"2.2"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_11iqzap">
+        <inputEntry id="UnaryTests_0uec6p7">
+          <text>? &lt;= 1000</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0a3gogo">
+          <text>"1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0n9ah29">
+          <text>? in ["1", "2.1", "2.2"]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fm0f01">
+          <text>? in ["1", "2.1", "2.2"]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hc3h27">
+          <text>? in ["1", "2.1", "2.2"]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14g6ucd">
+          <text>"1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0x41bu9">
+          <text>"2"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xtyigq">
+          <text>"1"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0xd4chu">
+          <text>"3"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0zj21dg">
+        <inputEntry id="UnaryTests_08a15hs">
+          <text>? &lt;= 1000</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1o28p7j">
+          <text>"1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xaa3oa">
+          <text>? in ["2.1", "2.2"]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12htq4w">
+          <text>? in ["2.1", "2.2", "2.3"]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1cwcqh6">
+          <text>? in ["2.1", "2.2", "2.3"]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gwizmo">
+          <text>"2.5"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wzfntr">
+          <text>"1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yxhe1n">
+          <text>"2.1"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_135lhhm">
+          <text>"4.1"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0o3olkw">
+        <inputEntry id="UnaryTests_02n5k05">
+          <text>? &lt;= 1000</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1c25hxy">
+          <text>"1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_147w02l">
+          <text>? in ["2.1", "2.2"]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1di2hxg">
+          <text>? in ["2.1", "2.2", "2.3"]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_117zdbc">
+          <text>? in ["2.1", "2.2", "2.3"]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vujzo7">
+          <text>"2.5"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ultnem">
+          <text>"1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rx89tb">
+          <text>"2.2"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1qy5bkg">
+          <text>"4.2"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0phqz8k">
+        <inputEntry id="UnaryTests_0plteo4">
+          <text>? &lt;= 1000</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0je6uwp">
+          <text>"1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09q9ycb">
+          <text>? in ["2.1", "2.2"]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0c6mwwh">
+          <text>? in ["2.1", "2.2", "2.3"]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gqwyii">
+          <text>? in ["2.1", "2.2", "2.3"]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1cf1zhz">
+          <text>"2.5"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1t3e6s3">
+          <text>"1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rmfnrj">
+          <text>"2.3"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1slvmrf">
+          <text>"4.3"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1qrj7op">
+        <inputEntry id="UnaryTests_0vumuo2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1sdh4u4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1g9xp0r">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0w3i933">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10a2c24">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qojgsc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ankwq7">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_041uxp6">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1x0vn8o">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1l56k1n">
+        <inputEntry id="UnaryTests_0fqficg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_199iyct">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jq0kv4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1618bte">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1miowv5">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0u191ol">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gqvyjs">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_150hk4s">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1hchj3i">
+          <text></text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_1cykosu">
+      <dmndi:DMNShape id="DMNShape_1dhfq2s" dmnElementRef="decision_gjea6x3">
+        <dc:Bounds height="80" width="180" x="157" y="151" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
