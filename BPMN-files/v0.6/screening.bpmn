@@ -1,0 +1,1182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:spiffworkflow="http://spiffworkflow.org/bpmn/schema/1.0/core" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_96f6665" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.0.0-dev">
+  <bpmn:process id="Process_test_f0v3xpd" isExecutable="true">
+    <bpmn:sequenceFlow id="Flow_17db3yp" sourceRef="StartEvent_1" targetRef="Activity_0qpzdpu" />
+    <bpmn:endEvent id="EndEvent_1">
+      <bpmn:incoming>Flow_1wdcznq</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_12pkbxb" sourceRef="Activity_0qpzdpu" targetRef="Activity_1k8s2sn" />
+    <bpmn:sequenceFlow id="Flow_1cy9s1i" sourceRef="Activity_18b3xbg" targetRef="Activity_0vszxia" />
+    <bpmn:businessRuleTask id="Activity_18b3xbg" name="risk">
+      <bpmn:extensionElements>
+        <spiffworkflow:calledDecisionId>decision_4xfrtgx</spiffworkflow:calledDecisionId>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_195vww7</bpmn:incoming>
+      <bpmn:outgoing>Flow_1cy9s1i</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:sequenceFlow id="Flow_0sisgnn" sourceRef="Activity_1k8s2sn" targetRef="Activity_1iie0zz" />
+    <bpmn:businessRuleTask id="Activity_1k8s2sn" name="personal_breast_examination">
+      <bpmn:extensionElements>
+        <spiffworkflow:calledDecisionId>decision_ke798m7</spiffworkflow:calledDecisionId>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_12pkbxb</bpmn:incoming>
+      <bpmn:outgoing>Flow_0sisgnn</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:sequenceFlow id="Flow_1rfqeqp" sourceRef="Activity_1iie0zz" targetRef="Activity_1hzj22o" />
+    <bpmn:businessRuleTask id="Activity_1iie0zz" name="clinical_breast_examination">
+      <bpmn:extensionElements>
+        <spiffworkflow:calledDecisionId>decision_a8xua3b</spiffworkflow:calledDecisionId>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0sisgnn</bpmn:incoming>
+      <bpmn:outgoing>Flow_1rfqeqp</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:sequenceFlow id="Flow_1n6qek2" sourceRef="Activity_1hzj22o" targetRef="Activity_06gy62z" />
+    <bpmn:businessRuleTask id="Activity_1hzj22o" name="mammography_history">
+      <bpmn:extensionElements>
+        <spiffworkflow:calledDecisionId>decision_59kg976</spiffworkflow:calledDecisionId>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1rfqeqp</bpmn:incoming>
+      <bpmn:outgoing>Flow_1n6qek2</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:sequenceFlow id="Flow_1he6jhc" sourceRef="Activity_06gy62z" targetRef="Activity_0y55je8" />
+    <bpmn:businessRuleTask id="Activity_06gy62z" name="ultrasound_history">
+      <bpmn:extensionElements>
+        <spiffworkflow:calledDecisionId>decision_a0vyx23</spiffworkflow:calledDecisionId>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1n6qek2</bpmn:incoming>
+      <bpmn:outgoing>Flow_1he6jhc</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:sequenceFlow id="Flow_00p0zwn" sourceRef="Activity_0y55je8" targetRef="Activity_0zkv4ai" />
+    <bpmn:businessRuleTask id="Activity_0y55je8" name="biopsy_history">
+      <bpmn:extensionElements>
+        <spiffworkflow:calledDecisionId>decision_y7q574n</spiffworkflow:calledDecisionId>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1he6jhc</bpmn:incoming>
+      <bpmn:outgoing>Flow_00p0zwn</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:sequenceFlow id="Flow_1fziqbg" sourceRef="Activity_0zkv4ai" targetRef="Activity_0nvhm9b" />
+    <bpmn:businessRuleTask id="Activity_0zkv4ai" name="radiotherapy_history">
+      <bpmn:extensionElements>
+        <spiffworkflow:calledDecisionId>decision_8h2p59e</spiffworkflow:calledDecisionId>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_00p0zwn</bpmn:incoming>
+      <bpmn:outgoing>Flow_1fziqbg</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:businessRuleTask id="Activity_0nvhm9b" name="personal_familial_cancer_history">
+      <bpmn:extensionElements>
+        <spiffworkflow:calledDecisionId>decision_j31gul4</spiffworkflow:calledDecisionId>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1fziqbg</bpmn:incoming>
+      <bpmn:outgoing>Flow_06jiy8g</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:businessRuleTask id="Activity_0vszxia" name="threshold_age">
+      <bpmn:extensionElements>
+        <spiffworkflow:calledDecisionId>decision_gzz36v6</spiffworkflow:calledDecisionId>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1cy9s1i</bpmn:incoming>
+      <bpmn:outgoing>Flow_0jnrs59</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:sequenceFlow id="Flow_06jiy8g" sourceRef="Activity_0nvhm9b" targetRef="Activity_01fucpm" />
+    <bpmn:sequenceFlow id="Flow_195vww7" sourceRef="Activity_01fucpm" targetRef="Activity_18b3xbg" />
+    <bpmn:scriptTask id="Activity_01fucpm" name="risk_init">
+      <bpmn:extensionElements>
+        <spiffworkflow:instructionsForEndUser />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_06jiy8g</bpmn:incoming>
+      <bpmn:outgoing>Flow_195vww7</bpmn:outgoing>
+      <bpmn:ioSpecification>
+        <bpmn:inputSet />
+        <bpmn:outputSet />
+      </bpmn:ioSpecification>
+      <bpmn:script>
+# history_a --------------------------------------------------
+filtered_list = [entry for entry in familial_breast_cancer_list if entry.get('degree') in [1, 2]]
+age_list = [age for entry in filtered_list for key, age in entry.items() if
+            key in ['age_of_diagnose', 'age_of_diagnose_left', 'age_of_diagnose_right']]
+age_list = [age for age in age_list if age is not None]
+age_list.append(age_of_diagnose_by_breast_cancer)
+age_list.append(age_of_diagnose_by_breast_cancer_right)
+age_list.append(age_of_diagnose_by_breast_cancer_left)
+age_a = min(age_list)
+history_a = personal_breast_cancer_history or bool(filtered_list)
+
+# history_b --------------------------------------------------
+filtered_list = [entry for entry in familial_breast_cancer_list if entry.get('degree') in [1, 2] and entry.get('side') == "twoSide"]
+
+for entry in filtered_list:
+    if entry.get("age_of_diagnose_left") &gt; 45 and entry.get("age_of_diagnose_right") &gt; 45:
+        bool_b = True  # both_after_45
+
+history_b = personal_twoside_breast_cancer_history or bool(filtered_list)
+bool_b = (personal_twoside_breast_cancer_history and age_of_diagnose_by_breast_cancer_left &gt; 45 and age_of_diagnose_by_breast_cancer_right &gt; 45) or bool_b
+
+
+# history_c --------------------------------------------------
+filtered_list = [entry for entry in familial_ovary_cancer_list if entry.get('degree') in [1, 2]]
+age_list = [age for entry in filtered_list for key, age in entry.items() if
+            key == 'age_of_diagnose']
+age_list = [age for age in age_list if age is not None]
+age_list.append(age_of_diagnose_by_ovary_cancer)
+age_c = min(age_list)
+history_c = personal_ovary_cancer_history or bool(filtered_list)
+
+# history_d --------------------------------------------------
+filtered_list = [entry for entry in familial_pancreatic_cancer_list if entry.get('degree') == 1]
+age_list = [age for entry in filtered_list for key, age in entry.items() if
+            key == 'age_of_diagnose']
+age_list = [age for age in age_list if age is not None]
+age_list.append(age_of_diagnose_by_pancreatic_cancer)
+age_d = min(age_list)
+history_d = personal_pancreatic_cancer_history or bool(filtered_list)
+
+# history_e --------------------------------------------------
+filtered_list = [entry for entry in familial_prostate_cancer_list if entry.get('degree') == 1]
+age_list = [age for entry in filtered_list for key, age in entry.items() if
+            key == 'age_of_diagnose']
+age_list = [age for age in age_list if age is not None]
+age_list.append(1000)
+age_e = min(age_list)
+history_e = bool(filtered_list)
+
+# history_f --------------------------------------------------
+breast_cancer_exist = personal_breast_cancer_history or familial_breast_cancer_history
+flag_fam_br_before_50 = False
+num_fam_br_before_50 = 0
+flag_fam_ov_before_60 = False
+flag_fam_pn_before_60 = False
+flag_fam_pr_before_60 = False
+if total_cancer_number &gt;= 2 and breast_cancer_exist:
+    if total_brest_cancer_number &gt;= 2:
+        history_f4 = True
+        for entry in familial_breast_cancer_list:
+            if entry.get('age_of_diagnose', 1000) &lt; 50 or entry.get('age_of_diagnose_left', 1000) &lt; 50 or entry.get('age_of_diagnose_right', 1000) &lt; 50:
+                flag_fam_br_before_50 = True
+                num_fam_br_before_50 += 1
+        if (age_of_diagnose_by_breast_cancer &lt; 50 or age_of_diagnose_by_breast_cancer_right &lt; 50 or age_of_diagnose_by_breast_cancer_left &lt; 50 and num_fam_br_before_50 &gt;= 1) or num_fam_br_before_50 &gt;= 2:
+            history_f5 = True
+    else:  # cancers other than breast
+        if familial_ovary_cancer_history or personal_ovary_cancer_history:
+            history_f4 = True
+            for entry in familial_ovary_cancer_list:
+                if entry.get('age_of_diagnose') &lt; 60:
+                    flag_fam_ov_before_60 = True
+            if age_of_diagnose_by_ovary_cancer &lt; 60 or flag_fam_ov_before_60:
+                history_f5 = True
+
+        if familial_pancreatic_cancer_history or personal_pancreatic_cancer_history:
+            history_f4 = True
+            for entry in familial_pancreatic_cancer_list:
+                if entry.get('age_of_diagnose') &lt; 60:
+                    flag_fam_pn_before_60 = True
+            if age_of_diagnose_by_pancreatic_cancer &lt; 60 or flag_fam_pn_before_60:
+                history_f5 = True
+        if familial_prostate_cancer_history:
+            history_f4 = True
+            for entry in familial_prostate_cancer_list:
+                if entry.get('age_of_diagnose') &lt; 45:
+                    flag_fam_pr_before_60 = True
+            if flag_fam_pr_before_60:
+                history_f5 = True
+
+# history_g --------------------------------------------------
+filtered_list = [entry for entry in familial_men_breast_cancer_list if entry.get('degree') in [1, 2]]
+history_g = bool(filtered_list)
+
+</bpmn:script>
+    </bpmn:scriptTask>
+    <bpmn:businessRuleTask id="Activity_156alxa" name="grouping">
+      <bpmn:extensionElements>
+        <spiffworkflow:calledDecisionId>decision_gjea6x3</spiffworkflow:calledDecisionId>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0jnrs59</bpmn:incoming>
+      <bpmn:outgoing>Flow_15baujn</bpmn:outgoing>
+    </bpmn:businessRuleTask>
+    <bpmn:scriptTask id="Activity_0fpc5e9" name="timing">
+      <bpmn:extensionElements>
+        <spiffworkflow:instructionsForEndUser />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0v8r3my</bpmn:incoming>
+      <bpmn:outgoing>Flow_16p75ec</bpmn:outgoing>
+      <bpmn:ioSpecification>
+        <bpmn:outputSet />
+      </bpmn:ioSpecification>
+      <bpmn:script>
+def latest_date(dates):
+    return max(dates, key=lambda date: (date[1], date[0]))
+
+
+def date_calc(month, year, additional_years):
+    if month + 3 &gt; 12:
+        date = [(month + 3) % 12, year + additional_years + 1]
+    else:
+        date = [month + 3, year + additional_years]
+    return date
+
+clinical_examination_time_a = None
+clinical_examination_time_b = None
+imaging_time_a = None
+imaging_time_b = None
+# clinical examination time
+if subgroup == "1.1":
+    clinical_examination_time_a = latest_date([[clinical_examination_month, clinical_examination_year + 1],
+                                          [ultrasound_month, ultrasound_year + 1],
+                                          [mammography_month, mammography_year + 1],
+                                          [self_assessment_month, self_assessment_year],
+                                          [birth_month, birth_year + 30]])
+
+    clinical_examination_time_b = latest_date([[clinical_examination_month, clinical_examination_year + 2],
+                                          [ultrasound_month, ultrasound_year + 2],
+                                          [mammography_month, mammography_year + 2],
+                                          date_calc(self_assessment_month, self_assessment_year, 0),
+                                          date_calc(birth_month, birth_year, 30)])
+
+elif subgroup in ["1.2", "1.3", "1.4"]:
+    clinical_examination_time_a = latest_date([[clinical_examination_month, clinical_examination_year + 1],
+                                          [ultrasound_month, ultrasound_year + 1],
+                                          [mammography_month, mammography_year + 1],
+                                          [self_assessment_month, self_assessment_year]])
+
+    clinical_examination_time_b = latest_date([[clinical_examination_month, clinical_examination_year + 2],
+                                          [ultrasound_month, ultrasound_year + 2],
+                                          [mammography_month, mammography_year + 2],
+                                          date_calc(self_assessment_month, self_assessment_year, 0)])
+
+
+# imaging time
+if subgroup in ["1.1", "1.2"]:
+    imaging_time_a = [birth_month, birth_year + 45]
+
+elif subgroup == "1.3":
+    imaging_time_a = latest_date([
+        [ultrasound_month, ultrasound_year + 1],
+        [mammography_month, mammography_year + 1],
+        [birth_month, birth_year + 45]])
+
+    imaging_time_b = latest_date([
+        [ultrasound_month, ultrasound_year + 2],
+        [mammography_month, mammography_year + 2],
+        date_calc(birth_month, birth_year, 45)])
+
+elif subgroup == "1.4":
+    imaging_time_a = latest_date([
+        [ultrasound_month, ultrasound_year + 1],
+        [mammography_month, mammography_year + 1],
+        [birth_month, birth_year + 45],
+        [self_assessment_month, self_assessment_year]])
+
+    imaging_time_b = latest_date([
+        [ultrasound_month, ultrasound_year + 2],
+        [mammography_month, mammography_year + 2],
+        date_calc(birth_month, birth_year, 45),
+        date_calc(self_assessment_month, self_assessment_year, 0)])
+</bpmn:script>
+    </bpmn:scriptTask>
+    <bpmn:sequenceFlow id="Flow_15baujn" sourceRef="Activity_156alxa" targetRef="Activity_115mtx7" />
+    <bpmn:sequenceFlow id="Flow_16p75ec" sourceRef="Activity_0fpc5e9" targetRef="Activity_1ikcw8j" />
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_17db3yp</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_1fox6sq" messageRef="start">
+        <bpmn:extensionElements>
+          <spiffworkflow:messageVariable />
+        </bpmn:extensionElements>
+      </bpmn:messageEventDefinition>
+    </bpmn:startEvent>
+    <bpmn:userTask id="Activity_0qpzdpu" name="Example manual task">
+      <bpmn:extensionElements>
+        <spiffworkflow:instructionsForEndUser>This is an example **Manual Task**. A **Manual Task** is designed to allow someone to complete a task outside of the system and then report back that it is complete. You can click the *Continue* button to proceed. When you are done running this process, you can edit the **Process Model** to include a:
+
+ * **Script Task** - write a short snippet of python code to update some data
+ *  **User Task** - generate a form that collects information from a user
+ * **Service Task** - communicate with an external API to fetch or update some data.
+
+You can also change the text you are reading here by updating the *Instructions* on this example manual task.</spiffworkflow:instructionsForEndUser>
+        <spiffworkflow:properties>
+          <spiffworkflow:property name="formJsonSchemaFilename" value="userdata-schema.json" />
+          <spiffworkflow:property name="formUiSchemaFilename" value="userdata-uischema.json" />
+        </spiffworkflow:properties>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_17db3yp</bpmn:incoming>
+      <bpmn:outgoing>Flow_12pkbxb</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_15tx4iu" sourceRef="Activity_1ikcw8j" targetRef="Activity_0lhndz2" />
+    <bpmn:sequenceFlow id="Flow_1wv9b1d" sourceRef="Activity_0lhndz2" targetRef="Activity_0dphwnc" />
+    <bpmn:scriptTask id="Activity_1ikcw8j" name="clinical_examination_time">
+      <bpmn:incoming>Flow_16p75ec</bpmn:incoming>
+      <bpmn:outgoing>Flow_15tx4iu</bpmn:outgoing>
+      <bpmn:script>def latest_date(dates):
+    return max(dates, key=lambda date: (date[1], date[0]))
+
+
+def date_calc(month, year, additional_years):
+    if month + 3 &gt; 12:
+        date = [(month + 3) % 12, year + additional_years + 1]
+    else:
+        date = [month + 3, year + additional_years]
+    return date
+
+clinical_examination_time_a = None
+clinical_examination_time_b = None
+clinical_examination_time_x = None
+
+if subgroup == "1.1":
+    clinical_examination_time_a = latest_date([[clinical_examination_month, clinical_examination_year + 1],
+                                          [ultrasound_month, ultrasound_year + 1],
+                                          [mammography_month, mammography_year + 1],
+                                          [self_assessment_month, self_assessment_year],
+                                          [birth_month, birth_year + 30]])
+
+    clinical_examination_time_b = latest_date([[clinical_examination_month, clinical_examination_year + 2],
+                                          [ultrasound_month, ultrasound_year + 2],
+                                          [mammography_month, mammography_year + 2],
+                                          date_calc(self_assessment_month, self_assessment_year, 0),
+                                          date_calc(birth_month, birth_year, 30)])
+
+# ==================================================================================================================
+
+elif subgroup == "2.1.1":
+    clinical_examination_time_a = latest_date([[clinical_examination_month, clinical_examination_year + 1],
+                                          [ultrasound_month, ultrasound_year + 1],
+                                          [mammography_month, mammography_year + 1],
+                                          [self_assessment_month, self_assessment_year],
+                                          [birth_month, birth_year + 30],
+                                          [biopsy_month, biopsy_year + 1]])
+
+    clinical_examination_time_b = latest_date([
+                                            date_calc(clinical_examination_month, clinical_examination_year, 1),
+                                            date_calc(mammography_month, mammography_year, 1),
+                                            date_calc(ultrasound_month, ultrasound_year, 1),
+                                            date_calc(self_assessment_month, self_assessment_year, 0),
+                                            date_calc(birth_month, birth_year, 30),
+                                            date_calc(biopsy_month, biopsy_year, 1),
+                                            ])
+elif subgroup == "2.2.1":
+    clinical_examination_time_a = latest_date([[clinical_examination_month, clinical_examination_year + 1],
+                                          [mammography_month, mammography_year + 1],
+                                          [ultrasound_month, ultrasound_year + 1],
+                                          [self_assessment_month, self_assessment_year],
+                                          [birth_month, birth_year + 20],
+                                          [biopsy_month, biopsy_year + 1]])
+
+    clinical_examination_time_b = latest_date([
+                                            date_calc(clinical_examination_month, clinical_examination_year, 1),
+                                            date_calc(mammography_month, mammography_year, 1),
+                                            date_calc(ultrasound_month, ultrasound_year, 1),
+                                            date_calc(self_assessment_month, self_assessment_year, 0),
+                                            date_calc(birth_month, birth_year, 20),
+                                            date_calc(biopsy_month, biopsy_year, 1),
+                                            ])    
+elif subgroup in ["2.2.2", "2.2.3"]:
+    clinical_examination_time_x = biopsy_year - birth_year + 1
+    clinical_examination_time_a = latest_date([[clinical_examination_month, clinical_examination_year + 1],
+                                          [mammography_month, mammography_year + 1],
+                                          [ultrasound_month, ultrasound_year + 1],
+                                          [self_assessment_month, self_assessment_year],
+                                          [birth_month, birth_year + clinical_examination_time_x],
+                                          [biopsy_month, biopsy_year + 1]])
+
+    clinical_examination_time_b = latest_date([
+                                            date_calc(clinical_examination_month, clinical_examination_year, 1),
+                                            date_calc(mammography_month, mammography_year, 1),
+                                            date_calc(ultrasound_month, ultrasound_year, 1),
+                                            date_calc(self_assessment_month, self_assessment_year, 0),
+                                            date_calc(birth_month, birth_year, clinical_examination_time_x),
+                                            date_calc(biopsy_month, biopsy_year, 1),
+                                            ])
+
+elif subgroup in ["2.2.4", "2.2.5"]: 
+    clinical_examination_time_a = latest_date([[clinical_examination_month, clinical_examination_year + 1],
+                                          [mammography_month, mammography_year + 1],
+                                          [ultrasound_month, ultrasound_year + 1],
+                                          [self_assessment_month, self_assessment_year],
+                                          [birth_month, birth_year + 30],
+                                          [biopsy_month, biopsy_year + 1]])
+
+    clinical_examination_time_b = latest_date([
+                                            date_calc(clinical_examination_month, clinical_examination_year, 1),
+                                            date_calc(mammography_month, mammography_year, 1),
+                                            date_calc(ultrasound_month, ultrasound_year, 1),
+                                            date_calc(self_assessment_month, self_assessment_year, 0),
+                                            date_calc(birth_month, birth_year, 30),
+                                            date_calc(biopsy_month, biopsy_year, 1),
+                                            ])
+# ==================================================================================================================
+elif subgroup == "3.1":
+    clinical_examination_time_a = latest_date([[clinical_examination_month, clinical_examination_year + 1],
+                                          [mammography_month, mammography_year + 1],
+                                          [ultrasound_month, ultrasound_year + 1],
+                                          [self_assessment_month, self_assessment_year],
+                                          [birth_month, birth_year + 20],
+                                          [radiotherapy_month, radiotherapy_year + 8]])
+
+    clinical_examination_time_b = latest_date([
+                                            date_calc(clinical_examination_month, clinical_examination_year, 1),
+                                            date_calc(mammography_month, mammography_year, 1),
+                                            date_calc(ultrasound_month, ultrasound_year, 1),
+                                            date_calc(self_assessment_month, self_assessment_year, 0),
+                                            date_calc(birth_month, birth_year, 20),
+                                            date_calc(radiotherapy_month, radiotherapy_year , 8),
+                                            ])
+elif subgroup in ["3.2", "3.3"]:
+    clinical_examination_time_x = floating_threshold_age
+    clinical_examination_time_a = latest_date([[clinical_examination_month, clinical_examination_year + 1],
+                                          [mammography_month, mammography_year + 1],
+                                          [ultrasound_month, ultrasound_year + 1],
+                                          [self_assessment_month, self_assessment_year],
+                                          [birth_month, birth_year + floating_threshold_age],
+                                          [radiotherapy_month, radiotherapy_year + 8]])
+
+    clinical_examination_time_b = latest_date([
+                                            date_calc(clinical_examination_month, clinical_examination_year, 1),
+                                            date_calc(mammography_month, mammography_year, 1),
+                                            date_calc(ultrasound_month, ultrasound_year, 1),
+                                            date_calc(self_assessment_month, self_assessment_year, 0),
+                                            date_calc(birth_month, birth_year, floating_threshold_age),
+                                            date_calc(radiotherapy_month, radiotherapy_year , 8),
+                                            ])   
+elif subgroup in ["3.4", "3.5"]:
+    clinical_examination_time_a = latest_date([[clinical_examination_month, clinical_examination_year + 1],
+                                          [mammography_month, mammography_year + 1],
+                                          [ultrasound_month, ultrasound_year + 1],
+                                          [self_assessment_month, self_assessment_year],
+                                          [birth_month, birth_year + 30],
+                                          [radiotherapy_month, radiotherapy_year + 8]])
+
+    clinical_examination_time_b = latest_date([
+                                            date_calc(clinical_examination_month, clinical_examination_year, 1),
+                                            date_calc(mammography_month, mammography_year, 1),
+                                            date_calc(ultrasound_month, ultrasound_year, 1),
+                                            date_calc(self_assessment_month, self_assessment_year, 0),
+                                            date_calc(birth_month, birth_year, 30),
+                                            date_calc(radiotherapy_month, radiotherapy_year , 8),
+                                            ])   
+# ==================================================================================================================
+elif subgroup == "4.3.1":
+    clinical_examination_time_a = latest_date([[clinical_examination_month, clinical_examination_year + 1],
+                                          [mammography_month, mammography_year + 1],
+                                          [ultrasound_month, ultrasound_year + 1],
+                                          [self_assessment_month, self_assessment_year],
+                                          [birth_month, birth_year + 30],
+                                          [1, birth_year + floating_threshold_age]])
+
+    clinical_examination_time_b = latest_date([[clinical_examination_month, clinical_examination_year + 2],
+                                          [mammography_month, mammography_year + 2],
+                                          [ultrasound_month, ultrasound_year + 2],
+                                          [self_assessment_month, self_assessment_year + 1],
+                                          [birth_month, birth_year + 31],
+                                          [1, birth_year + floating_threshold_age + 1]])
+elif subgroup in ["4.3.2.1","4.3.3.1"]:
+    clinical_examination_time_a = latest_date([[clinical_examination_month, clinical_examination_year + 1],
+                                          [mammography_month, mammography_year + 1],
+                                          [ultrasound_month, ultrasound_year + 1],
+                                          [self_assessment_month, self_assessment_year],
+                                          [birth_month, birth_year + 20],
+                                          [1, birth_year + floating_threshold_age]])
+
+    clinical_examination_time_b = latest_date([
+                                            date_calc(clinical_examination_month, clinical_examination_year, 1),
+                                            date_calc(mammography_month, mammography_year, 1),
+                                            date_calc(ultrasound_month, ultrasound_year, 1),
+                                            date_calc(self_assessment_month, self_assessment_year, 0),
+                                            date_calc(birth_month, birth_year, 20),
+                                            date_calc(1, birth_year + floating_threshold_age , 0),
+                                            ])
+elif subgroup in ["4.3.2.2", "4.3.2.3", "4.3.3.2", "4.3.3.3"]:
+    clinical_examination_time_x = floating_threshold_age
+    clinical_examination_time_a = latest_date([[clinical_examination_month, clinical_examination_year + 1],
+                                          [mammography_month, mammography_year + 1],
+                                          [ultrasound_month, ultrasound_year + 1],
+                                          [self_assessment_month, self_assessment_year],
+                                          [birth_month, birth_year + floating_threshold_age],
+                                          [1, birth_year + floating_threshold_age]])
+
+    clinical_examination_time_b = latest_date([
+                                            date_calc(clinical_examination_month, clinical_examination_year, 1),
+                                            date_calc(mammography_month, mammography_year, 1),
+                                            date_calc(ultrasound_month, ultrasound_year, 1),
+                                            date_calc(self_assessment_month, self_assessment_year, 0),
+                                            date_calc(birth_month, birth_year, floating_threshold_age),
+                                            date_calc(1, birth_year + floating_threshold_age , 0),
+                                            ])
+
+elif subgroup in ["4.3.2.4", "4.3.2.5", "4.3.3.4", "4.3.3.5"]:
+    clinical_examination_time_a = latest_date([[clinical_examination_month, clinical_examination_year + 1],
+                                          [mammography_month, mammography_year + 1],
+                                          [ultrasound_month, ultrasound_year + 1],
+                                          [self_assessment_month, self_assessment_year],
+                                          [birth_month, birth_year + 30],
+                                          [1, birth_year + floating_threshold_age]])
+
+    clinical_examination_time_b = latest_date([
+                                            date_calc(clinical_examination_month, clinical_examination_year, 1),
+                                            date_calc(mammography_month, mammography_year, 1),
+                                            date_calc(ultrasound_month, ultrasound_year, 1),
+                                            date_calc(self_assessment_month, self_assessment_year, 0),
+                                            date_calc(birth_month, birth_year, 30),
+                                            date_calc(1, birth_year + floating_threshold_age , 0),
+                                            ])
+
+</bpmn:script>
+    </bpmn:scriptTask>
+    <bpmn:scriptTask id="Activity_0lhndz2" name="imagin_time">
+      <bpmn:incoming>Flow_15tx4iu</bpmn:incoming>
+      <bpmn:outgoing>Flow_1wv9b1d</bpmn:outgoing>
+      <bpmn:script>def latest_date(dates):
+    return max(dates, key=lambda date: (date[1], date[0]))
+
+
+def date_calc(month, year, additional_years):
+    if month + 3 &gt; 12:
+        date = [(month + 3) % 12, year + additional_years + 1]
+    else:
+        date = [month + 3, year + additional_years]
+    return date
+
+imaging_time_a = None
+imaging_time_b = None
+imaging_time_x = None
+
+if subgroup == "1.1":
+    imaging_time_a = latest_date([
+        [ultrasound_month, ultrasound_year + 1],
+        [mammography_month, mammography_year + 1],
+        [self_assessment_month, self_assessment_year],
+        [birth_month, birth_year + 45]])
+
+    imaging_time_b = latest_date([
+        [ultrasound_month, ultrasound_year + 2],
+        [mammography_month, mammography_year + 2],
+        date_calc(self_assessment_month, self_assessment_year, 0),
+        date_calc(birth_month, birth_year, 45)])
+# =====================================================================
+elif subgroup == "2.1.1":
+    imaging_time_a = latest_date([
+        [ultrasound_month, ultrasound_year + 1],
+        [mammography_month, mammography_year + 1],
+        [self_assessment_month, self_assessment_year],
+        [birth_month, birth_year + 40],
+        [biopsy_month, biopsy_year + 1]
+        ])
+
+    imaging_time_b = latest_date([
+        date_calc(ultrasound_month, ultrasound_year, 1),
+        date_calc(mammography_month, mammography_year, 1),
+        date_calc(self_assessment_month, self_assessment_year, 0),
+        date_calc(birth_month, birth_year, 40),
+        date_calc(biopsy_month, biopsy_year , 1)])
+# =====================================================================
+elif subgroup in ["2.2.1", "2.2.2"]:
+    imaging_time_a = latest_date([
+        [ultrasound_month, ultrasound_year + 1],
+        [mammography_month, mammography_year + 1],
+        [self_assessment_month, self_assessment_year],
+        [birth_month, birth_year + 25],
+        [biopsy_month, biopsy_year + 1]
+        ])
+
+    imaging_time_b = latest_date([
+        date_calc(ultrasound_month, ultrasound_year, 1),
+        date_calc(mammography_month, mammography_year, 1),
+        date_calc(self_assessment_month, self_assessment_year, 0),
+        date_calc(birth_month, birth_year, 25),
+        date_calc(biopsy_month, biopsy_year , 1)])
+
+elif subgroup in ["2.2.3", "2.2.4"]:
+    imaging_time_a = latest_date([
+        [ultrasound_month, ultrasound_year + 1],
+        [mammography_month, mammography_year + 1],
+        [self_assessment_month, self_assessment_year],
+        [birth_month, birth_year + floating_threshold_age],
+        [biopsy_month, biopsy_year + 1]
+        ])
+
+    imaging_time_b = latest_date([
+        date_calc(ultrasound_month, ultrasound_year, 1),
+        date_calc(mammography_month, mammography_year, 1),
+        date_calc(self_assessment_month, self_assessment_year, 0),
+        date_calc(birth_month, birth_year, floating_threshold_age),
+        date_calc(biopsy_month, biopsy_year , 1)])
+        
+elif subgroup in ["2.2.1", "2.2.2"]:
+    imaging_time_a = latest_date([
+        [ultrasound_month, ultrasound_year + 1],
+        [mammography_month, mammography_year + 1],
+        [self_assessment_month, self_assessment_year],
+        [birth_month, birth_year + 40],
+        [biopsy_month, biopsy_year + 1]])
+
+    imaging_time_b = latest_date([
+        date_calc(ultrasound_month, ultrasound_year, 1),
+        date_calc(mammography_month, mammography_year, 1),
+        date_calc(self_assessment_month, self_assessment_year, 0),
+        date_calc(birth_month, birth_year, 40),
+        date_calc(biopsy_month, biopsy_year , 1)])
+# =====================================================================
+elif subgroup in ["3.1", "3.2"]:
+    imaging_time_a = latest_date([
+        [ultrasound_month, ultrasound_year + 1],
+        [mammography_month, mammography_year + 1],
+        [self_assessment_month, self_assessment_year],
+        [birth_month, birth_year + 25],
+        [radiotherapy_month, radiotherapy_year + 8]])
+
+    imaging_time_b = latest_date([
+        date_calc(ultrasound_month, ultrasound_year, 1),
+        date_calc(mammography_month, mammography_year, 1),
+        date_calc(self_assessment_month, self_assessment_year, 0),
+        date_calc(birth_month, birth_year, 25),
+        date_calc(radiotherapy_month, radiotherapy_year , 8)])
+
+elif subgroup in ["3.3","3.4"]:
+    imaging_time_a = latest_date([
+        [ultrasound_month, ultrasound_year + 1],
+        [mammography_month, mammography_year + 1],
+        [self_assessment_month, self_assessment_year],
+        [birth_month, birth_year + floating_threshold_age],
+        [radiotherapy_month, radiotherapy_year + 8]])
+
+    imaging_time_b = latest_date([
+        date_calc(ultrasound_month, ultrasound_year, 1),
+        date_calc(mammography_month, mammography_year, 1),
+        date_calc(self_assessment_month, self_assessment_year, 0),
+        date_calc(birth_month, birth_year, floating_threshold_age),
+        date_calc(radiotherapy_month, radiotherapy_year , 8)])
+
+elif subgroup == "3.5":
+    imaging_time_a = latest_date([
+        [ultrasound_month, ultrasound_year + 1],
+        [mammography_month, mammography_year + 1],
+        [self_assessment_month, self_assessment_year],
+        [birth_month, birth_year + 40],
+        [radiotherapy_month, radiotherapy_year + 8]])
+
+    imaging_time_b = latest_date([
+        date_calc(ultrasound_month, ultrasound_year, 1),
+        date_calc(mammography_month, mammography_year, 1),
+        date_calc(self_assessment_month, self_assessment_year, 0),
+        date_calc(birth_month, birth_year, 40),
+        date_calc(radiotherapy_month, radiotherapy_year , 8)])
+# =====================================================================
+elif subgroup == "4.3.1":
+    imaging_time_a = latest_date([
+        [clinical_examination_month, clinical_examination_year + 1],
+        [mammography_month, mammography_year + 1],
+        [ultrasound_month, ultrasound_year + 1],
+        [self_assessment_month, self_assessment_year],
+        [birth_month, birth_year + 40],
+        [1, birth_year + floating_threshold_age]])
+
+    imaging_time_b = latest_date([
+        [clinical_examination_month, clinical_examination_year + 2],
+        [mammography_month, mammography_year + 2],
+        [ultrasound_month, ultrasound_year + 2],
+        [self_assessment_month, self_assessment_year + 1],
+        [birth_month, birth_year + 41],
+        [1, birth_year + floating_threshold_age + 1]])
+
+elif subgroup in ["4.3.2.1", "4.3.2.2", "4.3.3.1", "4.3.3.2"]:
+    imaging_time_a = latest_date([
+        [mammography_month, mammography_year + 1],
+        [ultrasound_month, ultrasound_year + 1],
+        [self_assessment_month, self_assessment_year],
+        [birth_month, birth_year + 25],
+        [1, birth_year + floating_threshold_age]])
+
+    imaging_time_b = latest_date([
+        date_calc(ultrasound_month, ultrasound_year, 1),
+        date_calc(mammography_month, mammography_year, 1),
+        date_calc(self_assessment_month, self_assessment_year, 0),
+        date_calc(birth_month, birth_year, 25),
+        date_calc(1, birth_year + floating_threshold_age , 0)])
+
+elif subgroup in ["4.3.2.3", "4.3.2.4", "4.3.3.3", "4.3.3.4"]:
+    imaging_time_x = floating_threshold_age
+    imaging_time_a = latest_date([
+        [mammography_month, mammography_year + 1],
+        [ultrasound_month, ultrasound_year + 1],
+        [self_assessment_month, self_assessment_year],
+        [birth_month, birth_year + floating_threshold_age],
+        [1, birth_year + floating_threshold_age]])
+
+    imaging_time_b = latest_date([
+        date_calc(ultrasound_month, ultrasound_year, 1),
+        date_calc(mammography_month, mammography_year, 1),
+        date_calc(self_assessment_month, self_assessment_year, 0),
+        date_calc(birth_month, birth_year, floating_threshold_age),
+        date_calc(1, birth_year + floating_threshold_age , 0)])
+
+elif subgroup in ["4.3.2.5", "4.3.3.5"]:
+    imaging_time_x = floating_threshold_age
+    imaging_time_a = latest_date([
+        [mammography_month, mammography_year + 1],
+        [ultrasound_month, ultrasound_year + 1],
+        [self_assessment_month, self_assessment_year],
+        [birth_month, birth_year + 40],
+        [1, birth_year + floating_threshold_age]])
+
+    imaging_time_b = latest_date([
+        date_calc(ultrasound_month, ultrasound_year, 1),
+        date_calc(mammography_month, mammography_year, 1),
+        date_calc(self_assessment_month, self_assessment_year, 0),
+        date_calc(birth_month, birth_year, 40),
+        date_calc(1, birth_year + floating_threshold_age , 0)])    
+
+</bpmn:script>
+    </bpmn:scriptTask>
+    <bpmn:sequenceFlow id="Flow_0v8r3my" sourceRef="Activity_115mtx7" targetRef="Activity_0fpc5e9" />
+    <bpmn:scriptTask id="Activity_115mtx7" name="subgrouping">
+      <bpmn:extensionElements>
+        <spiffworkflow:instructionsForEndUser />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_15baujn</bpmn:incoming>
+      <bpmn:outgoing>Flow_0v8r3my</bpmn:outgoing>
+      <bpmn:script>subgroup = "0"
+floating_threshold_age = 0
+
+if group == "1":
+    if 20 &lt;= age and age &lt;= 75:
+        subgroup = "1.1"
+    elif age &gt; 75:
+        subgroup = "1.2"
+# =======================================================
+if group == "2.1":
+    if 20 &lt;= age and age &lt;= 75:
+        subgroup = "2.1.1"
+    elif age &gt; 75:
+        subgroup = "2.1.2"
+# =======================================================
+if group == "2.2":
+    floating_threshold_age = biopsy_year - birth_year + 1
+    if floating_threshold_age &lt;= 20:
+        subgroup = "2.2.1"
+    elif 21 &lt;= floating_threshold_age and floating_threshold_age &lt;= 25:
+        subgroup = "2.2.2"  
+    elif 26 &lt;= floating_threshold_age and floating_threshold_age &lt;= 29:
+        subgroup = "2.2.3"  
+    elif 30 &lt;= floating_threshold_age and floating_threshold_age &lt;= 39:
+        subgroup = "2.2.4"
+    elif 40 &lt;= floating_threshold_age and floating_threshold_age &lt;= 75:
+        subgroup = "2.2.5"
+    else:
+        subgroup = "2.2.6"
+# =======================================================
+if group == "3":
+    floating_threshold_age = radiotherapy_year - birth_year + 8
+    if floating_threshold_age &lt;= 20:
+        subgroup = "3.1"
+    elif 21 &lt;= floating_threshold_age and floating_threshold_age &lt;= 25:
+        subgroup = "3.2"
+    elif 26 &lt;= floating_threshold_age and floating_threshold_age &lt;= 29:
+        subgroup = "3.3"  
+    elif 30 &lt;= floating_threshold_age and floating_threshold_age &lt;= 39:
+        subgroup = "3.4"
+    elif 40 &lt;= floating_threshold_age and floating_threshold_age &lt;= 75:
+        subgroup = "3.5"
+    else:
+        subgroup = "3.6"
+# =======================================================
+if group == "4.1":
+    if risk_level == "3":
+        subgroup = "4.1.1"
+    elif risk_level == "4":
+        subgroup = "4.1.2"
+    elif risk_level == "5":
+        subgroup = "4.1.3"
+# =======================================================
+if group == "4.2":
+    if risk_level == "3":
+        subgroup = "4.2.1"
+    elif risk_level == "4":
+        subgroup = "4.2.2"
+    elif risk_level == "5":
+        subgroup = "4.2.3"
+# =======================================================   
+age_list = [age_of_diagnose_by_ovary_cancer, age_of_diagnose_by_pancreatic_cancer]
+if group == "4.3":
+    if risk_level == "3":
+        subgroup = "4.3.1"
+        if familial_prostate_cancer_history:
+            for fam in familial_prostate_cancer_list:
+                age_list.append(fam.get('age_of_diagnose',50))
+        if familial_pancreatic_cancer_history:
+            for fam in familial_pancreatic_cancer_list:
+                age_list.append(fam.get('age_of_diagnose',50))
+        if familial_ovary_cancer_history:
+            for fam in familial_ovary_cancer_list:
+                 age_list.append(fam.get('age_of_diagnose',50))
+        if familial_breast_cancer_history:
+            for fam in familial_breast_cancer_list:
+                if 'age_of_diagnose_right' in fam and 'age_of_diagnose_left' in fam:
+                    age_list.extend([fam['age_of_diagnose_right'], fam['age_of_diagnose_left']])
+                elif 'age_of_diagnose' in fam:
+                    age_list.append(fam['age_of_diagnose'])
+        floating_threshold_age = min(age_list) 
+    
+    elif risk_level == "4":
+        if familial_prostate_cancer_history:
+            for fam in familial_prostate_cancer_list:
+                age_list.append(fam.get('age_of_diagnose',50) - 5)
+        if familial_pancreatic_cancer_history:
+            for fam in familial_pancreatic_cancer_list:
+                age_list.append(fam.get('age_of_diagnose',50) - 5)
+        if familial_ovary_cancer_history:
+            for fam in familial_ovary_cancer_list:
+                 age_list.append(fam.get('age_of_diagnose',50) - 5)
+        if familial_breast_cancer_history:
+            for fam in familial_breast_cancer_list:
+                if 'age_of_diagnose_right' in fam and 'age_of_diagnose_left' in fam:
+                    age_list.extend([fam['age_of_diagnose_right'] - 5, fam['age_of_diagnose_left'] - 5])
+                elif 'age_of_diagnose' in fam:
+                    age_list.append(fam['age_of_diagnose'] - 5)
+        floating_threshold_age = min(age_list)
+        if floating_threshold_age &lt;= 20:
+            subgroup = '4.3.2.1'
+        elif 21 &lt;= floating_threshold_age and floating_threshold_age &lt;= 25:
+            subgroup = '4.3.2.2' 
+        elif 26 &lt;= floating_threshold_age and floating_threshold_age &lt;= 29:
+            subgroup = '4.3.2.3'
+        elif 30 &lt;= floating_threshold_age and floating_threshold_age &lt;= 39:
+            subgroup = '4.3.2.4'
+        elif 40 &lt;= floating_threshold_age and floating_threshold_age &lt;= 75:
+            subgroup = '4.3.2.5'
+        else:
+            subgroup = '4.3.2.6'
+    
+    elif risk_level == "5":
+        if familial_prostate_cancer_history:
+            for fam in familial_prostate_cancer_list:
+                age_list.append(fam.get('age_of_diagnose',50) - 10)
+        if familial_pancreatic_cancer_history:
+            for fam in familial_pancreatic_cancer_list:
+                age_list.append(fam.get('age_of_diagnose',50) - 10)
+        if familial_ovary_cancer_history:
+            for fam in familial_ovary_cancer_list:
+                 age_list.append(fam.get('age_of_diagnose',50) - 10)
+        if familial_breast_cancer_history:
+            for fam in familial_breast_cancer_list:
+                if 'age_of_diagnose_right' in fam and 'age_of_diagnose_left' in fam:
+                    age_list.extend([fam['age_of_diagnose_right'] - 10, fam['age_of_diagnose_left'] - 10])
+                elif 'age_of_diagnose' in fam:
+                    age_list.append(fam['age_of_diagnose'] - 10)
+        floating_threshold_age = min(age_list)
+        if floating_threshold_age &lt;= 20:
+            subgroup = '4.3.3.1'
+        elif 21 &lt;= floating_threshold_age and floating_threshold_age &lt;= 25:
+            subgroup = '4.3.3.2' 
+        elif 26 &lt;= floating_threshold_age and floating_threshold_age &lt;= 29:
+            subgroup = '4.3.3.3'
+        elif 30 &lt;= floating_threshold_age and floating_threshold_age &lt;= 39:
+            subgroup = '4.3.3.4'
+        elif 40 &lt;= floating_threshold_age and floating_threshold_age &lt;= 75:
+            subgroup = '4.3.3.5'
+        else:
+            subgroup = '4.3.3.6'
+    
+
+
+
+</bpmn:script>
+    </bpmn:scriptTask>
+    <bpmn:sequenceFlow id="Flow_0qra0zc" sourceRef="Activity_0dphwnc" targetRef="Activity_1tebx1h" />
+    <bpmn:scriptTask id="Activity_0dphwnc" name="advice1">
+      <bpmn:incoming>Flow_1wv9b1d</bpmn:incoming>
+      <bpmn:outgoing>Flow_0qra0zc</bpmn:outgoing>
+      <bpmn:script>subgtoup_to_danger_var = {
+    '1.1': 'شما در گروه خطر متوسط جامعه برای ابتلا به سرطان پستان قرار می گیرید',
+    '1.2': 'شما در گروه خطر متوسط جامعه برای ابتلا به سرطان پستان قرار می گیرید',
+    '2.1.1': 'با توجه به سابقه نمونه برداری، شما ممکن است در گروه خطرمتوسط یا کم و بیش متوسط جامعه برای ابتلا به سرطان پستان قرار داشته باشید',
+    '2.1.2': 'با توجه به سابقه نمونه برداری، شما ممکن است در گروه خطرمتوسط یا کم و بیش متوسط جامعه برای ابتلا به سرطان پستان قرار داشته باشید',
+    '2.2.1': 'با توجه به سابقه نمونه برداری، شما ممکن است در گروه خطر کم و بیش متوسط جامعه برای ابتلا به سرطان پستان قرار داشته باشید',
+    '2.2.2': 'با توجه به سابقه نمونه برداری، شما ممکن است در گروه خطر کم و بیش متوسط جامعه برای ابتلا به سرطان پستان قرار داشته باشید',
+    '2.2.3': 'با توجه به سابقه نمونه برداری، شما ممکن است در گروه خطر کم و بیش متوسط جامعه برای ابتلا به سرطان پستان قرار داشته باشید',
+    '2.2.4': 'با توجه به سابقه نمونه برداری، شما ممکن است در گروه خطر کم و بیش متوسط جامعه برای ابتلا به سرطان پستان قرار داشته باشید',
+    '2.2.5': 'با توجه به سابقه نمونه برداری، شما ممکن است در گروه خطر کم و بیش متوسط جامعه برای ابتلا به سرطان پستان قرار داشته باشید',
+    '2.2.6': 'با توجه به سابقه نمونه برداری، شما ممکن است در گروه خطر کم و بیش متوسط جامعه برای ابتلا به سرطان پستان قرار داشته باشید',
+    '3.1': 'با توجه به سابقه رادیوتراپی قفسه سینه، شما ممکن است در گروه خطرکم و بیش متوسط جامعه برای ابتلا به سرطان پستان قرار داشته باشید',
+    '3.2': 'با توجه به سابقه نمونه برداری، شما ممکن است در گروه خطر کم و بیش متوسط جامعه برای ابتلا به سرطان پستان قرار داشته باشید',
+    '3.3': 'با توجه به سابقه نمونه برداری، شما ممکن است در گروه خطر کم و بیش متوسط جامعه برای ابتلا به سرطان پستان قرار داشته باشید',
+    '3.4': 'با توجه به سابقه نمونه برداری، شما ممکن است در گروه خطر کم و بیش متوسط جامعه برای ابتلا به سرطان پستان قرار داشته باشید',
+    '3.5': 'با توجه به سابقه نمونه برداری، شما ممکن است در گروه خطر کم و بیش متوسط جامعه برای ابتلا به سرطان پستان قرار داشته باشید',
+    '3.6': 'با توجه به سابقه نمونه برداری، شما ممکن است در گروه خطر کم و بیش متوسط جامعه برای ابتلا به سرطان پستان قرار داشته باشید',
+    '4.1.1': 'با توجه به سابقه فردی، شما در گروه خطر کمی بالاتر از متوسط جامعه برای ابتلا به سرطان پستان قرار دارید',
+    '4.1.2': 'با توجه به سابقه فردی، شما در گروه خطر تا حدودی بالاتر از متوسط جامعه برای ابتلا به سرطان پستان قرار دارید',
+    '4.1.3': 'با توجه به سابقه فردی، شما در گروه خطر بالاتر از متوسط جامعه برای ابتلا به سرطان پستان قرار دارید',
+    '4.2.1': 'با توجه به سابقه فردی، شما در گروه خطر کمی بالاتر از متوسط جامعه برای ابتلا به سرطان پستان قرار دارید',
+    '4.2.2': 'با توجه به سابقه فردی، شما در گروه خطر تا حدودی بالاتر از متوسط جامعه برای ابتلا به سرطان پستان قرار دارید',
+    '4.2.3': 'با توجه به سابقه فردی، شما در گروه خطر بالاتر از متوسط جامعه برای ابتلا به سرطان پستان قرار دارید',
+    '4.3.1': 'با توجه به سابقه فردی، شما در گروه خطر کمی بالاتر از متوسط جامعه برای ابتلا به سرطان پستان قرار دارید',
+    '4.3.2.1': 'با توجه به سابقه فردی، شما در گروه خطر تا حدودی بالاتر از متوسط جامعه برای ابتلا به سرطان پستان قرار دارید',
+    '4.3.2.2': 'با توجه به سابقه فردی، شما در گروه خطر تا حدودی بالاتر از متوسط جامعه برای ابتلا به سرطان پستان قرار دارید',
+    '4.3.2.3': 'با توجه به سابقه فردی، شما در گروه خطر تا حدودی بالاتر از متوسط جامعه برای ابتلا به سرطان پستان قرار دارید',
+    '4.3.2.4': 'با توجه به سابقه فردی، شما در گروه خطر تا حدودی بالاتر از متوسط جامعه برای ابتلا به سرطان پستان قرار دارید',
+    '4.3.2.5': 'با توجه به سابقه فردی، شما در گروه خطر تا حدودی بالاتر از متوسط جامعه برای ابتلا به سرطان پستان قرار دارید',
+    '4.3.2.6': 'با توجه به سابقه فردی، شما در گروه خطر تا حدودی بالاتر از متوسط جامعه برای ابتلا به سرطان پستان قرار دارید',
+    '4.3.3.1': 'با توجه به سابقه فردی، شما در گروه خطر بالاتر از متوسط جامعه برای ابتلا به سرطان پستان قرار دارید',
+    '4.3.3.2': 'با توجه به سابقه فردی، شما در گروه خطر تا حدودی بالاتر از متوسط جامعه برای ابتلا به سرطان پستان قرار دارید',
+    '4.3.3.3': 'با توجه به سابقه فردی، شما در گروه خطر تا حدودی بالاتر از متوسط جامعه برای ابتلا به سرطان پستان قرار دارید',
+    '4.3.3.4': 'با توجه به سابقه فردی، شما در گروه خطر تا حدودی بالاتر از متوسط جامعه برای ابتلا به سرطان پستان قرار دارید',
+    '4.3.3.5': 'با توجه به سابقه فردی، شما در گروه خطر تا حدودی بالاتر از متوسط جامعه برای ابتلا به سرطان پستان قرار دارید',
+    '4.3.3.6': 'با توجه به سابقه فردی، شما در گروه خطر تا حدودی بالاتر از متوسط جامعه برای ابتلا به سرطان پستان قرار دارید',
+}
+
+danger_group_message = f'بر اساس پاسخ‌های شما به ارزیابی انجام شده، {subgtoup_to_danger_var.get(subgroup, "subgroup not defined")} و بر این اساس، اقدامات بعدی به شما توصیه می‌شود.'
+</bpmn:script>
+    </bpmn:scriptTask>
+    <bpmn:sequenceFlow id="Flow_0g8t2d3" sourceRef="Activity_1tebx1h" targetRef="Activity_16q2lu2" />
+    <bpmn:sequenceFlow id="Flow_1uyrm6m" sourceRef="Activity_16q2lu2" targetRef="Activity_0ejn6e9" />
+    <bpmn:sequenceFlow id="Flow_1xjt0il" sourceRef="Activity_0ejn6e9" targetRef="Activity_010sc95" />
+    <bpmn:sequenceFlow id="Flow_1wdcznq" sourceRef="Activity_010sc95" targetRef="EndEvent_1" />
+    <bpmn:scriptTask id="Activity_1tebx1h" name="advice2">
+      <bpmn:incoming>Flow_0qra0zc</bpmn:incoming>
+      <bpmn:outgoing>Flow_0g8t2d3</bpmn:outgoing>
+      <bpmn:script>assessment_visit_message = 'null'
+months = {
+    1: 'فروردین',
+    2: 'اردیبهشت',
+    3: 'خرداد',
+    4: 'تیر',
+    5: 'مرداد',
+    6: 'شهریور',
+    7: 'مهر',
+    8: 'آبان',
+    9: 'آذر',
+    10: 'دی',
+    11: 'بهمن',
+    12: 'اسفند'
+}
+subgroup_to_middle_msg = {
+    '1.1': 'از سن 30 سالگی، هر 1 تا 2 سال توسط پزشک معاینه شوند.',
+    '2.1.1': 'از سن 30 سالگی، هر 1 سال توسط پزشک معاینه شوند',
+    '2.2.1': 'از سن 20 سالگی، هر 1 سال توسط پزشک معاینه شوند',
+    '2.2.2': f'از سن {clinical_examination_time_x} سالگی، هر 1 سال توسط پزشک معاینه شوند',
+    '2.2.3': f'از سن {clinical_examination_time_x} سالگی، هر 1 سال توسط پزشک معاینه شوند',
+    '2.2.4': 'از سن 30 سالگی، هر 1 سال توسط پزشک معاینه شوند',
+    '2.2.5': 'از سن 30 سالگی، هر 1 تا 2 سال توسط پزشک معاینه شوند',
+    '3.1': 'از سن 20 سالگی، هر 1 سال توسط پزشک معاینه شوند',
+    '3.2': f'از سن {clinical_examination_time_x} سالگی، هر 1 سال توسط پزشک معاینه شوند',
+    '3.3': f'از سن {clinical_examination_time_x} سالگی، هر 1 سال توسط پزشک معاینه شوند',
+    '3.4': 'از سن 30 سالگی، هر 1 سال توسط پزشک معاینه شوند',
+    '3.5': 'از سن 30 سالگی، هر 1 تا 2 سال توسط پزشک معاینه شوند',
+    '4.3.1': 'از سن 30 سالگی، هر 1 تا 2 سال توسط پزشک معاینه شوند',
+    '4.3.2.1': 'از سن 20 سالگی، هر 1 سال توسط پزشک معاینه شوند',
+    '4.3.2.2': f'از سن {clinical_examination_time_x} سالگی، هر 1 سال توسط پزشک معاینه شوند',
+    '4.3.2.3': f'از سن {clinical_examination_time_x} سالگی، هر 1 سال توسط پزشک معاینه شوند',
+    '4.3.2.4': 'از سن 30 سالگی، هر 1 سال توسط پزشک معاینه شوند',
+    '4.3.2.5': 'از سن 30 سالگی، هر 1 سال توسط پزشک معاینه شوند',
+    '4.3.3.1': 'از سن 20 سالگی، هر 1 سال توسط پزشک معاینه شوند',
+    '4.3.3.2': f'از سن {clinical_examination_time_x} سالگی، هر 1 سال توسط پزشک معاینه شوند',
+    '4.3.3.3': f'از سن {clinical_examination_time_x} سالگی، هر 1 سال توسط پزشک معاینه شوند',
+    '4.3.3.4': 'از سن 30 سالگی، هر 1 سال توسط پزشک معاینه شوند',
+    '4.3.3.5': 'از سن 30 سالگی، هر 1 سال توسط پزشک معاینه شوند'
+}
+
+msg = subgroup_to_middle_msg.get(subgroup,'subgroup not defined')
+month1 = months.get(clinical_examination_time_a[0],'فروردین')
+month2 = months.get(clinical_examination_time_b[0],'فروردین')
+year1 = clinical_examination_time_a[1]
+year2 = clinical_examination_time_b[1]
+
+if subgroup in ['1.1', '2.1.1', '2.2.1','2.2.2','2.2.3','2.2.4','2.2.5', '3.1', '3.2', '3.3', '3.4', '3.5', '4.3.1', '4.3.2.1','4.3.2.2','4.3.2.3','4.3.2.4','4.3.2.5','4.3.3.1','4.3.3.2','4.3.3.3','4.3.3.4','4.3.3.5']:
+    assessment_visit_message = f'توصیه به افرادی با مشخصات شما این است که {msg} به همین دلیل با توجه به سوابق قبلی توصیه می شود در فاصله ماه {month1} سال {year1} تا ماه {month2} سال {year2}، برای ویزیت و معاینه اقدام کنید. زمان ویزیت ها و گام های بعدی، بر اساس نتایج ارزیابی شما مشخص خواهد شد.'
+elif subgroup in ['1.2', '2.1.2', '2.2.6', '3.6', '4.3.2.6', '4.3.3.6']:
+    if subgroup == '1.2':
+        assessment_visit_message = 'با توجه به سوابق قبلی، انجام ویزیت یا معاینه جدید توصیه نمی شود اما برای تشخیص زودهنگام سرطان پستان، علایم مشکوک سرطان پستان را بشناسید و در صورت داشتن علایم به پزشک مراجعه کنید.'
+    elif subgroup in ['2.1.2', '2.2.6', '3.6', '4.3.2.6', '4.3.3.6']:
+        assessment_visit_message = 'با توجه به سوابق قبلی، در این زمینه حتما با پزشک خود مشورت کنید. در همه شرایط برای تشخیص زودهنگام سرطان پستان، علایم مشکوک سرطان پستان را بشناسید و در صورت داشتن علایم به پزشک مراجعه کنید.'
+elif subgroup in ['4.1.1', '4.1.2', '4.1.3', '4.2.1', '4.2.2', '4.2.3']:
+    assessment_visit_message = 'توصیه به افرادی با مشخصات شما این است که پس از پایان مراحل درمان، در دو سال اول، هر 3 ماه، از سال سه تا پنج، هر 6 ماه و سپس هر 1 سال، توسط پزشک معاینه شوند اما با توجه به سوابق قبلی شما و تفاوت های بیماری برای افراد گوناگون، توصیه می شود مطابق با نظر پزشک خود، برای ویزیت و معاینه اقدام کنید. زمان ویزیت ها و اقدامات بعدی، بر اساس نتایج ارزیابی شما مشخص خواهد شد.'
+</bpmn:script>
+    </bpmn:scriptTask>
+    <bpmn:scriptTask id="Activity_16q2lu2" name="advice3">
+      <bpmn:incoming>Flow_0g8t2d3</bpmn:incoming>
+      <bpmn:outgoing>Flow_1uyrm6m</bpmn:outgoing>
+    </bpmn:scriptTask>
+    <bpmn:scriptTask id="Activity_0ejn6e9" name="advice4">
+      <bpmn:incoming>Flow_1uyrm6m</bpmn:incoming>
+      <bpmn:outgoing>Flow_1xjt0il</bpmn:outgoing>
+    </bpmn:scriptTask>
+    <bpmn:scriptTask id="Activity_010sc95" name="advice5">
+      <bpmn:incoming>Flow_1xjt0il</bpmn:incoming>
+      <bpmn:outgoing>Flow_1wdcznq</bpmn:outgoing>
+      <bpmn:ioSpecification>
+        <bpmn:inputSet />
+      </bpmn:ioSpecification>
+    </bpmn:scriptTask>
+    <bpmn:sequenceFlow id="Flow_0jnrs59" sourceRef="Activity_0vszxia" targetRef="Activity_156alxa" />
+  </bpmn:process>
+  <bpmn:message id="start" name="start" />
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_test_f0v3xpd">
+      <bpmndi:BPMNShape id="Activity_1ichxr8_di" bpmnElement="Activity_18b3xbg">
+        <dc:Bounds x="1000" y="137" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_08x8d9t_di" bpmnElement="Activity_1k8s2sn">
+        <dc:Bounds x="10" y="137" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0gb9w2r_di" bpmnElement="Activity_1iie0zz">
+        <dc:Bounds x="130" y="137" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0gpoirq_di" bpmnElement="Activity_1hzj22o">
+        <dc:Bounds x="250" y="137" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1t1m9sg_di" bpmnElement="Activity_06gy62z">
+        <dc:Bounds x="370" y="137" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_08oktz9_di" bpmnElement="Activity_0y55je8">
+        <dc:Bounds x="490" y="137" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_122y2nn_di" bpmnElement="Activity_0zkv4ai">
+        <dc:Bounds x="610" y="137" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0kgh0nj_di" bpmnElement="Activity_0nvhm9b">
+        <dc:Bounds x="730" y="137" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_02oit8r_di" bpmnElement="Activity_0vszxia">
+        <dc:Bounds x="1150" y="137" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_14aa4td_di" bpmnElement="Activity_01fucpm">
+        <dc:Bounds x="880" y="137" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0199wdm_di" bpmnElement="Activity_156alxa">
+        <dc:Bounds x="1150" y="290" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_01dbg4c_di" bpmnElement="Activity_0fpc5e9">
+        <dc:Bounds x="890" y="290" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_118y3gb_di" bpmnElement="StartEvent_1">
+        <dc:Bounds x="-218" y="159" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1yulauf_di" bpmnElement="Activity_0qpzdpu">
+        <dc:Bounds x="-130" y="137" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1flw6rt_di" bpmnElement="Activity_1ikcw8j">
+        <dc:Bounds x="760" y="290" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1swkp4h_di" bpmnElement="Activity_0lhndz2">
+        <dc:Bounds x="630" y="290" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0xuj3s1_di" bpmnElement="Activity_115mtx7">
+        <dc:Bounds x="1020" y="290" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_050moxx_di" bpmnElement="Activity_0dphwnc">
+        <dc:Bounds x="490" y="290" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0s5wz6s_di" bpmnElement="Activity_1tebx1h">
+        <dc:Bounds x="370" y="290" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0bbb7ex_di" bpmnElement="Activity_16q2lu2">
+        <dc:Bounds x="250" y="290" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_16oowj6_di" bpmnElement="Activity_0ejn6e9">
+        <dc:Bounds x="130" y="290" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_04ifie9_di" bpmnElement="Activity_010sc95">
+        <dc:Bounds x="10" y="290" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_14za570_di" bpmnElement="EndEvent_1">
+        <dc:Bounds x="-68" y="312" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_17db3yp_di" bpmnElement="Flow_17db3yp">
+        <di:waypoint x="-182" y="177" />
+        <di:waypoint x="-130" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_12pkbxb_di" bpmnElement="Flow_12pkbxb">
+        <di:waypoint x="-30" y="177" />
+        <di:waypoint x="10" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1cy9s1i_di" bpmnElement="Flow_1cy9s1i">
+        <di:waypoint x="1100" y="177" />
+        <di:waypoint x="1150" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0sisgnn_di" bpmnElement="Flow_0sisgnn">
+        <di:waypoint x="110" y="177" />
+        <di:waypoint x="130" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1rfqeqp_di" bpmnElement="Flow_1rfqeqp">
+        <di:waypoint x="230" y="177" />
+        <di:waypoint x="250" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1n6qek2_di" bpmnElement="Flow_1n6qek2">
+        <di:waypoint x="350" y="177" />
+        <di:waypoint x="370" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1he6jhc_di" bpmnElement="Flow_1he6jhc">
+        <di:waypoint x="470" y="177" />
+        <di:waypoint x="490" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_00p0zwn_di" bpmnElement="Flow_00p0zwn">
+        <di:waypoint x="590" y="177" />
+        <di:waypoint x="610" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1fziqbg_di" bpmnElement="Flow_1fziqbg">
+        <di:waypoint x="710" y="177" />
+        <di:waypoint x="730" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_06jiy8g_di" bpmnElement="Flow_06jiy8g">
+        <di:waypoint x="830" y="177" />
+        <di:waypoint x="880" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_195vww7_di" bpmnElement="Flow_195vww7">
+        <di:waypoint x="980" y="177" />
+        <di:waypoint x="1000" y="177" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_15baujn_di" bpmnElement="Flow_15baujn">
+        <di:waypoint x="1150" y="330" />
+        <di:waypoint x="1120" y="330" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_16p75ec_di" bpmnElement="Flow_16p75ec">
+        <di:waypoint x="890" y="330" />
+        <di:waypoint x="860" y="330" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_15tx4iu_di" bpmnElement="Flow_15tx4iu">
+        <di:waypoint x="760" y="330" />
+        <di:waypoint x="730" y="330" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1wv9b1d_di" bpmnElement="Flow_1wv9b1d">
+        <di:waypoint x="630" y="330" />
+        <di:waypoint x="590" y="330" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0v8r3my_di" bpmnElement="Flow_0v8r3my">
+        <di:waypoint x="1020" y="330" />
+        <di:waypoint x="990" y="330" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0qra0zc_di" bpmnElement="Flow_0qra0zc">
+        <di:waypoint x="490" y="330" />
+        <di:waypoint x="470" y="330" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0g8t2d3_di" bpmnElement="Flow_0g8t2d3">
+        <di:waypoint x="370" y="330" />
+        <di:waypoint x="350" y="330" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1uyrm6m_di" bpmnElement="Flow_1uyrm6m">
+        <di:waypoint x="250" y="330" />
+        <di:waypoint x="230" y="330" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1xjt0il_di" bpmnElement="Flow_1xjt0il">
+        <di:waypoint x="130" y="330" />
+        <di:waypoint x="110" y="330" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1wdcznq_di" bpmnElement="Flow_1wdcznq">
+        <di:waypoint x="10" y="330" />
+        <di:waypoint x="-32" y="330" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0jnrs59_di" bpmnElement="Flow_0jnrs59">
+        <di:waypoint x="1200" y="217" />
+        <di:waypoint x="1200" y="290" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
