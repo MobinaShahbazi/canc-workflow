@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="Definitions_76910d7" name="DRD" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="decision_59kg976" name="mammography_history">
+    <decisionTable id="decisionTable_1">
+      <input id="input_1">
+        <inputExpression id="inputExpression_1" typeRef="boolean">
+          <text>mammography_history</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_05mgx36">
+        <inputExpression id="LiteralExpression_1gvj8s8" typeRef="string">
+          <text>mammography_result</text>
+        </inputExpression>
+      </input>
+      <output id="output_1" name="parameter3" typeRef="string" />
+      <rule id="DecisionRule_1fztufo">
+        <inputEntry id="UnaryTests_0tavek5">
+          <text>False</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pv44v3">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0pbdt6e">
+          <text>"1"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_16dft3g">
+        <inputEntry id="UnaryTests_12vuweh">
+          <text>True</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1karoul">
+          <text>"1"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_10rx2my">
+          <text>"2.1"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0dnli8k">
+        <inputEntry id="UnaryTests_0j69kv3">
+          <text>True</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0id5yk7">
+          <text>"2"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1tbnz1s">
+          <text>"2.2"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ncobut">
+        <inputEntry id="UnaryTests_09e1bre">
+          <text>True</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0o4980e">
+          <text>"3"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0zre6qy">
+          <text>"2.3"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_1cykosu">
+      <dmndi:DMNShape id="DMNShape_1dhfq2s" dmnElementRef="decision_59kg976">
+        <dc:Bounds height="80" width="180" x="157" y="151" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
